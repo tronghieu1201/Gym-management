@@ -1,0 +1,101 @@
+{
+  "2026-08-11": {
+    "completed": true,
+    "exercises": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true
+    },
+    "logs": {
+      "0": [
+        {
+          "weight": 15,
+          "reps": 10,
+          "timestamp": "19:30"
+        }
+      ],
+      "3": [
+        {
+          "weight": 5,
+          "reps": 15,
+          "timestamp": "19:45"
+        }
+      ]
+    },
+    "notes": {
+      "0": "Form tốt hơn hôm trước, cần tăng tạ tuần sau"
+    }
+  },
+  "2026-08-12": {
+    "completed": true,
+    "exercises": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true
+    },
+    "logs": {
+      "0": [
+        {
+          "weight": 0,
+          "reps": 8,
+          "timestamp": "20:00"
+        }
+      ]
+    },
+    "notes": {}
+  },
+  "2026-08-13": {
+    "completed": true,
+    "exercises": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true
+    },
+    "logs": {
+      "0": [
+        {
+          "weight": 20,
+          "reps": 12,
+          "timestamp": "18:30"
+        }
+      ]
+    },
+    "notes": {}
+  },
+  "2026-08-14": {
+    "completed": true,
+    "exercises": {},
+    "logs": {},
+    "notes": {}
+  },
+  "2026-08-15": {
+    "completed": false,
+    "exercises": {
+      "0": true,
+      "1": true,
+      "2": true
+    },
+    "logs": {
+      "0": [
+        {
+          "weight": 12.5,
+          "reps": 10,
+          "timestamp": "10:30"
+        }
+      ]
+    },
+    "notes": {
+      "0": "Tập buổi sáng hôm nay"
+    }
+  }
+}

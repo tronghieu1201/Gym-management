@@ -1,0 +1,18 @@
+https : https://github.com/tronghieu1201/Gym-management.git
+
+echo "# Gym-management" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tronghieu1201/Gym-management.git
+git push -u origin main
+
+
+
+git remote add origin https://github.com/tronghieu1201/Gym-management.git
+git branch -M main
+git push -u origin main
+
+
+vừa tạo github nó ghi như này push hết lên gith
