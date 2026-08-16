@@ -10,42 +10,42 @@ const workoutData = {
                 sets: '4 hiệp × 8–12 lần', 
                 notes: 'Tác động: chính vào ngực; phụ vào tay sau và vai trước',
                 technique: 'Nằm ngửa trên sàn, co gối, giữ tạ ngang ngực và khuỷu chếch khỏi thân 30–45°. Hạ bắp tay chạm nhẹ sàn rồi đẩy tạ thẳng lên; không xoè khuỷu ngang 90°',
-                image: 'dumbbell-floor-press.jpg'
+                image: 'https://cdn.athlemove.com/b2fe571e-2e10-4128-8daf-298e9fad659c.png?width=1200&format=webp&signature=1f1a44f205163396e69bb53c30cb1b4e100102ed97aeaf30fb6f1b4dbc460446'
             },
             { 
                 name: 'Push-up', 
                 sets: '3 hiệp × 8–20 lần', 
                 notes: 'Tác động: chính vào ngực; phụ vào tay sau, vai trước và cơ bụng',
                 technique: 'Đặt tay rộng hơn vai một chút, giữ đầu–lưng–mông–chân thành một đường thẳng. Hạ ngực gần chạm sàn với khuỷu chếch 30–45° rồi đẩy lên; không võng lưng',
-                image: 'push-up.jpg'
+                image: 'https://cdn.athlemove.com/466609e7-ccef-49df-906f-43483737c5a0.webp?width=1200&signature=1e2bf6f7f348c256e5de22849618718b550e10f466ee29e9646530e0c6bdb24e'
             },
             { 
                 name: 'Band Chest Fly', 
                 sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: ngực, đặc biệt ở pha khép tay',
                 technique: 'Móc dây chắc chắn phía sau ở ngang ngực, bước lên trước để tạo độ căng. Giữ khuỷu hơi cong, khép hai tay trước ngực rồi mở ra chậm và có kiểm soát',
-                image: 'band-chest-fly.jpg'
+                image: 'https://maniacmuscle.com/wp-content/uploads/2026/02/band-chest-fly-male_chest-fix__mp4_hd.original-2.jpg'
             },
             { 
                 name: 'Dumbbell Lateral Raise', 
                 sets: '4 hiệp × 12–20 lần', 
                 notes: 'Tác động: vai giữa',
                 technique: 'Cầm tạ hai bên, khuỷu hơi cong và nâng cánh tay sang ngang đến gần ngang vai. Dẫn chuyển động bằng khuỷu; không nhún người, quăng tạ hoặc nhún vai',
-                image: 'dumbbell-lateral-raise.jpg'
+                image: 'https://cdn.athlemove.com/2bcf62c7-2686-4935-ae1c-0eaf3b44a88e.webp?width=1200&signature=9224edd1b14266031eb9b1331880d11b6f1a9761f437c6ff819220b7258cdd8a'
             },
             { 
                 name: 'Dumbbell Overhead Triceps Extension', 
                 sets: '3 hiệp × 10–15 lần', 
                 notes: 'Tác động: tay sau, nhấn mạnh đầu dài',
                 technique: 'Giữ một quả tạ bằng hai tay trên đầu, cố định bắp tay gần tai. Gập khuỷu hạ tạ ra sau đầu rồi duỗi tay lên; không xoè khuỷu quá rộng',
-                image: 'overhead-triceps-extension.jpg'
+                image: 'https://cdn.athlemove.com/0f6b2f14-4dce-4201-8297-952d3c6e510b.webp?width=1200&signature=5466aed9a86efb295038011c40f341afaf3c7365ec4ca0c9397459529b54fc65'
             },
             { 
                 name: 'Band Triceps Pushdown', 
                 sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: tay sau. Có thể thay Close-grip Push-up 2×8-15',
                 technique: 'Móc dây ở vị trí cao và giữ khuỷu sát thân. Duỗi cẳng tay xuống đến khi tay gần thẳng rồi trở lại chậm; bắp tay không đưa ra trước–sau',
-                image: 'band-triceps-pushdown.jpg'
+                image: 'https://cdn.athlemove.com/5f27f490-62d4-4e10-8911-096c48969a56.webp?width=1200&signature=b2c164c5372622d80642477c44633f3351485cdaf0e72d1ff983560957070c42'
             }
         ]
     },
@@ -59,42 +59,42 @@ const workoutData = {
                 sets: '4 hiệp × 5–10 lần', 
                 notes: 'Tác động: chính vào cơ xô và lưng trên; phụ vào tay trước',
                 technique: 'Nắm xà tay sấp, rộng bằng hoặc hơn vai một chút. Từ tư thế treo có kiểm soát, kéo ngực hướng về xà đến khi cằm vượt xà rồi hạ chậm; không đạp hoặc vung chân. Nếu chưa đủ sức: dùng dây hỗ trợ hoặc Negative Pull-up (nhảy lên rồi hạ chậm 3-5 giây)',
-                image: 'pull-up.jpg'
+                image: 'https://cdn.shopify.com/s/files/1/0705/5432/1194/files/mikolo-pull-ups-blog-2.png?v=1693468017'
             },
             { 
                 name: 'One-arm Dumbbell Row', 
                 sets: '4 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: cơ xô, lưng giữa và cơ quanh bả vai. Nghỉ 2-3 phút',
                 technique: 'Chống một tay lên ghế chắc chắn hoặc đùi, giữ lưng trung lập. Kéo tạ về phía hông, ép bả vai về sau rồi hạ tạ hết tầm; không xoay vặn thân người',
-                image: 'one-arm-dumbbell-row.jpg'
+                image: 'https://cdn.athlemove.com/e84eff2c-8caf-4818-8602-01ad02926e34.webp?width=750&signature=dc8a238f68fd206106cb3f32717103c9a60d8d463df879be52e1e12ffdf2789a'
             },
             { 
                 name: 'Band Straight-arm Pulldown', 
                 sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: cơ xô',
                 technique: 'Móc dây trên cao, đứng hơi nghiêng người về trước và giữ cánh tay gần thẳng. Kéo dây xuống sát đùi bằng cơ xô rồi đưa lên chậm; hạn chế gập khuỷu',
-                image: 'band-straight-arm-pulldown.jpg'
+                image: 'https://cdn.athlemove.com/17a86b13-e9ba-45f0-9abe-fbd90daed157.webp?width=750&signature=301d7b68d7ee0e058aad599bdcb0c36481b2f66497561713fadbba102bb825a7'
             },
             { 
                 name: 'Bent-over Dumbbell Rear-delt Fly', 
                 sets: '3 hiệp × 12–20 lần', 
                 notes: 'Tác động: vai sau và lưng trên',
                 technique: 'Gập hông, giữ lưng thẳng và khuỷu hơi cong. Dang hai tay sang hai bên đến gần ngang thân rồi hạ chậm; không nhún vai hoặc quăng tạ',
-                image: 'bent-over-rear-delt-fly.jpg'
+                image: 'https://cdn.athlemove.com/e7b091af-8611-4fd4-b9a8-f04f1b41b925.png?width=750&format=webp&signature=f7b8c56662760440e316bd06d28bba373d59a67c1dd2a3e8e554a1fa37e91c6f'
             },
             { 
                 name: 'Alternating Dumbbell Curl', 
                 sets: '3 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: tay trước',
                 technique: 'Đứng thẳng, lòng bàn tay hướng ra trước và giữ khuỷu sát thân. Cuốn từng quả tạ lên, siết tay trước rồi hạ hết tầm; không đung đưa người',
-                image: 'alternating-dumbbell-curl.jpg'
+                image: 'https://cdn.athlemove.com/39cc852d-fb4c-48ba-8c32-c2d831e206ca.webp?width=750&signature=c2f5a3dd98fa7b3ee22f3c93e8a51c21e8ff7b024fc650faea087cb96a3519bc'
             },
             { 
                 name: 'Hammer Curl', 
                 sets: '3 hiệp × 10–15 lần mỗi bên', 
                 notes: 'Tác động: cơ cánh tay, tay trước và cẳng tay',
                 technique: 'Giữ hai lòng bàn tay hướng vào nhau như cầm búa. Cố định khuỷu, cuốn tạ lên rồi hạ chậm; không đưa vai về trước',
-                image: 'hammer-curl.jpg'
+                image: 'https://cdn.athlemove.com/35545596-afdc-462a-bbe9-5a072c6faf3b.webp?width=750&signature=04d8acf63ee5733d7d0c7d225aed7f56164af713f00ce9b0e7157b610a725133'
             }
         ]
     },
@@ -108,73 +108,57 @@ const workoutData = {
                 sets: '3 hiệp × 8–15 lần', 
                 notes: 'Tác động: đùi trước và mông; phụ vào đùi sau và cơ bụng. Nghỉ 2-3 phút',
                 technique: 'Ôm một quả tạ sát trước ngực, chân rộng khoảng bằng vai. Đẩy gối theo hướng mũi chân, ngồi xuống sâu trong khả năng rồi đạp đều cả bàn chân để đứng lên. Nếu tạ nhẹ: dùng nhịp hạ 3 giây – dừng 1 giây – nâng lên',
-                image: 'goblet-squat.jpg'
+                image: 'https://cdn.athlemove.com/1fc0b159-960f-49e3-b314-df4529c53f38.png?width=640&format=webp&signature=48950b67ff54475216c8c8a340a47b67f9665e7068eb93425042c8030cc55f1a'
             },
             { 
                 name: 'Dumbbell Romanian Deadlift', 
                 sets: '3 hiệp × 8–15 lần', 
                 notes: 'Tác động: gân kheo, mông và lưng dưới. Nghỉ 2-3 phút',
                 technique: 'Cầm tạ trước đùi, gối hơi chùng và đẩy hông ra sau. Hạ tạ sát chân đến khi gân kheo căng rồi siết mông đứng lên; giữ lưng trung lập và không biến động tác thành squat',
-                image: 'dumbbell-romanian-deadlift.jpg'
+                image: 'https://cdn.athlemove.com/1d8bb4e4-ac0c-485d-8c48-29b035763d45.webp?width=750&signature=fe2ec1cc8367c1c36d179a2d70b2ea89fcca4ce3704a42d7c0a098f44b6e8bc8'
             },
             { 
                 name: 'Bulgarian Split Squat', 
                 sets: '3 hiệp × 8–12 lần mỗi chân', 
                 notes: 'Tác động: đùi trước và mông; cải thiện thăng bằng',
                 technique: 'Đặt mu bàn chân sau lên ghế thấp, chắc chắn và chân trước bước đủ xa. Hạ hông thẳng xuống, giữ gối trước theo hướng mũi chân rồi đạp bằng chân trước để đứng lên',
-                image: 'bulgarian-split-squat.jpg'
+                image: 'https://cdn.athlemove.com/24d09e98-7cb4-4977-a28d-d75a9bb59344.webp?width=750&signature=251451a4ff9a09e7471cc8fdb261247c4994ef646a9523d4caf78c77cf973ad9'
             },
             { 
                 name: 'Band Lying Leg Curl', 
                 sets: '3 hiệp × 12–20 lần', 
                 notes: 'Tác động: gân kheo',
                 technique: 'Móc dây ở vị trí thấp, chắc chắn và quấn vào cổ chân. Nằm sấp, giữ hông áp xuống sàn, co gối kéo gót chân về gần mông rồi duỗi chân trở lại chậm',
-                image: 'band-lying-leg-curl.jpg'
+                image: 'https://gym-animations.com/wp-content/uploads/2026/01/Band-Lying-Leg-Curl-1024x683.png'
             },
             { 
                 name: 'Single-leg Calf Raise', 
                 sets: '3 hiệp × 12–20 lần mỗi chân', 
                 notes: 'Tác động: bắp chân',
                 technique: 'Đứng một chân, một tay vịn chắc chắn và tay còn lại cầm tạ. Hạ gót xuống có kiểm soát, nhón lên cao hết mức và dừng một nhịp ở trên',
-                image: 'single-leg-calf-raise.jpg'
+                image: 'https://workoutguru.fit/wp-content/uploads/2023/10/dumbbell-standing-single-leg-calf-raise-video-exercise-guide-tips.jpg'
             },
             { 
                 name: 'Reverse Crunch', 
                 sets: '3 hiệp × 12–20 lần', 
                 notes: 'Tác động: bụng, đặc biệt chức năng cuộn xương chậu',
                 technique: 'Nằm ngửa, co gối và ép lưng dưới xuống sàn. Siết bụng cuộn xương chậu, đưa gối về phía ngực để mông nhấc nhẹ khỏi sàn; không vung chân lấy đà',
-                image: 'reverse-crunch.jpg'
+                image: 'https://cdn.athlemove.com/0156cecd-1d35-424a-9478-05023c653534.png?width=1200&format=webp&signature=242d7ad075d7b80aee6efcd819801be16df76c67982f0481d4fa82135b64a0dc'
             },
             { 
                 name: 'Plank', 
                 sets: '3 hiệp × 30–60 giây', 
                 notes: 'Tác động: toàn bộ vùng core, mông và vai giữ ổn định',
                 technique: 'Chống khuỷu ngay dưới vai, siết bụng và mông để cơ thể thành một đường thẳng. Không võng lưng hoặc nâng mông quá cao',
-                image: 'plank.jpg'
+                image: 'https://cdn.athlemove.com/29f44cd6-9165-4c6c-9f1c-3df8561977f2.webp?width=1200&signature=f257815385dc37b5742d1c8308a289ba911f123ee1fda52cc48d68639c9e3ba0'
             }
         ]
     },
     4: {
         name: 'Thứ 5',
-        focus: 'Recovery',
-        subtitle: 'Hồi phục - Nghỉ hoặc Zone 2 nhẹ',
+        focus: 'Nghỉ hoặc tập tự do',
         isRest: true,
-        exercises: [
-            { 
-                name: 'Rest hoặc Zone 2 Cardio', 
-                sets: '25-40 phút', 
-                notes: 'Tác động: hệ thần kinh, khớp và cơ bắp được hồi phục',
-                technique: 'Ưu tiên nghỉ hoàn toàn nếu còn đau cơ hoặc mệt. Nếu khỏe: đi bộ nhanh/chạy nhẹ ở cường độ vẫn nói chuyện được. Không tập tạ nặng',
-                image: 'recovery-cardio.jpg'
-            },
-            { 
-                name: 'Mobility Work (Tùy chọn)', 
-                sets: '10-15 phút', 
-                notes: 'Band Pull-apart, Shoulder CARs, Cat-Cow, Hip Flexor Stretch, Ankle Mobility',
-                technique: 'Vận động nhẹ vai, bả vai, hông và cổ chân. Di chuyển chậm trong tầm không đau. Không ép sâu hoặc thực hiện quá nhanh',
-                image: 'mobility-work.jpg'
-            }
-        ]
+        exercises: []
     },
     5: {
         name: 'Thứ 6',
@@ -186,49 +170,49 @@ const workoutData = {
                 sets: '4 hiệp × 6–12 lần', 
                 notes: 'Tác động: vai trước, vai giữa và tay sau. Nghỉ 2-3 phút',
                 technique: 'Đứng vững, siết bụng và mông, giữ tạ ngang vai với khuỷu hơi hướng ra trước. Đẩy tạ lên trên đầu rồi hạ chậm; không ưỡn lưng để lấy đà. Nếu tạ quá nhẹ: thay Pike Push-up 4×6-15',
-                image: 'standing-dumbbell-shoulder-press.jpg'
+                image: 'https://cdn.athlemove.com/3d8573f4-7924-4283-97bc-81b9b8fd2af8.webp?width=1200&signature=cd7bd6f350e290496a80adc7ba5bfbbf8433a16fe0b17622bf7b89af55e04b84'
             },
             { 
                 name: 'Dumbbell Lateral Raise', 
                 sets: '4 hiệp × 12–20 lần', 
                 notes: 'Tác động: vai giữa',
                 technique: 'Nâng tạ sang hai bên đến gần ngang vai với khuỷu hơi cong. Hạ tạ có kiểm soát; không nhún người hoặc kéo vai lên tai',
-                image: 'dumbbell-lateral-raise.jpg'
+                image: 'https://cdn.athlemove.com/2bcf62c7-2686-4935-ae1c-0eaf3b44a88e.webp?width=1200&signature=9224edd1b14266031eb9b1331880d11b6f1a9761f437c6ff819220b7258cdd8a'
             },
             { 
                 name: 'Band Face Pull', 
                 sets: '3 hiệp × 15–25 lần', 
                 notes: 'Tác động: vai sau, cơ xoay ngoài vai và lưng trên',
                 technique: 'Móc dây ngang mặt hoặc cao hơn một chút. Kéo dây về hai bên mặt, mở khuỷu và xoay bàn tay ra sau; siết vai sau, không nhún vai',
-                image: 'band-face-pull.jpg'
+                image: 'https://cdn.athlemove.com/3b8949ce-df11-4ea8-91ba-08d238ea6cfc.png?width=1200&format=webp&signature=9d044bca8f23669309e2a4ff0518d63d73e634cfdd52833d643a2c18532c454f'
             },
             { 
                 name: 'Feet-elevated Push-up', 
                 sets: '3 hiệp × 8–20 lần', 
                 notes: 'Tác động: ngực trên và vai trước; phụ vào tay sau',
                 technique: 'Đặt chân lên ghế chắc chắn, hai tay chống sàn và giữ thân người thẳng. Hạ phần ngực trên gần sàn rồi đẩy lên; không để lưng võng',
-                image: 'feet-elevated-push-up.jpg'
+                image: 'https://cdn.athlemove.com/44c4f16a-9560-422d-a531-483aceb7094b.png?width=1200&format=webp&signature=b505b325b354ce8aa802803eef4ea5f4b7477205d89b36723ade74269688d2a6'
             },
             { 
                 name: 'Dumbbell Squeeze Floor Press', 
                 sets: '2 hiệp × 10–15 lần', 
                 notes: 'Tác động: ngực và tay sau',
                 technique: 'Nằm trên sàn, ép hai quả tạ sát vào nhau trước ngực. Duy trì lực ép vào nhau trong toàn bộ lúc đẩy lên và hạ xuống',
-                image: 'dumbbell-squeeze-floor-press.jpg'
+                image: 'https://cdn.athlemove.com/eebfac34-93d9-4932-8058-fb03ee6f253f.png?width=1200&format=webp&signature=0b6a28fb0c4ffd4e1b42952decaa12af85522f820facdfb73c330edb8b28ce74'
             },
             { 
                 name: 'Dumbbell Overhead Triceps Extension', 
                 sets: '3 hiệp × 10–15 lần', 
                 notes: 'Tác động: tay sau, nhấn mạnh đầu dài',
                 technique: 'Giữ một quả tạ bằng hai tay trên đầu, bắp tay gần tai. Gập khuỷu hạ tạ ra sau đầu rồi duỗi tay lên; giữ thân người và bắp tay ổn định',
-                image: 'overhead-triceps-extension.jpg'
+                image: 'https://cdn.athlemove.com/0f6b2f14-4dce-4201-8297-952d3c6e510b.webp?width=1200&signature=5466aed9a86efb295038011c40f341afaf3c7365ec4ca0c9397459529b54fc65'
             },
             { 
                 name: 'Diamond Push-up', 
                 sets: '2 hiệp × 8–15 lần', 
                 notes: 'Tác động: tay sau; phụ vào ngực và vai trước',
                 technique: 'Đặt hai tay gần nhau dưới ngực, hạ người với khuỷu tương đối sát thân rồi đẩy lên. Nếu đau cổ tay: đổi sang Close-grip Push-up',
-                image: 'diamond-push-up.jpg'
+                image: 'https://cdn.athlemove.com/b70f0aa4-b9c1-4bd7-b3cf-2a419ac55d1e.webp?width=1200&signature=6e6575be83f63ab7f45b68b6d16d264165f7bdee1d01cf51f7ebe57bab538c02'
             }
         ]
     },
@@ -242,78 +226,73 @@ const workoutData = {
                 sets: '3 hiệp × 5–10 lần', 
                 notes: 'Tác động: cơ xô và tay trước; phụ vào lưng trên. Nghỉ 2-3 phút',
                 technique: 'Nắm xà tay ngửa, rộng khoảng bằng vai. Kéo khuỷu xuống sát thân để đưa ngực lên và cằm vượt xà, sau đó hạ người chậm; không vung chân',
-                image: 'chin-up.jpg'
+                image: 'https://cdn.athlemove.com/3adbb662-6037-41e3-a18a-6eb91ae26206.png?width=1200&format=webp&signature=1c65a6c0fb91e26f59f3f0f7a1c001cf1c7e1434457d7c4195d12feed1f09a26'
             },
             { 
                 name: 'One-arm Dumbbell Row', 
                 sets: '3 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: cơ xô, với khuỷu kéo sát thân',
                 technique: 'Giữ lưng trung lập và kéo khuỷu sát sườn, đưa tạ về phía hông. Hạ tạ đến khi tay gần thẳng; không xoay người để lấy đà',
-                image: 'one-arm-dumbbell-row.jpg'
+                image: 'https://cdn.athlemove.com/e84eff2c-8caf-4818-8602-01ad02926e34.webp?width=1200&signature=8015afc6c0656aa45f7794b5cf70bc0d533ef1785f0a06ae61208c1f7e9a06f6'
             },
             { 
                 name: 'Dumbbell Pullover', 
                 sets: '2 hiệp × 10–15 lần', 
                 notes: 'Tác động: cơ xô; phụ vào ngực và tay sau giữ ổn định',
                 technique: 'Nằm ngửa trên sàn, giữ một quả tạ bằng hai tay phía trên ngực. Giữ khuỷu hơi cong, hạ tạ ra sau đầu trong tầm kiểm soát rồi dùng cơ xô kéo tạ trở lại; không ưỡn lưng',
-                image: 'dumbbell-pullover.jpg'
+                image: 'https://cdn.athlemove.com/fa958568-77ad-46f9-8295-216d71284507.webp?width=1200&signature=b2b86ca52be9370afeda8d3b1877197a53ad5eb984d9df0083178a68985d4f96'
             },
             { 
                 name: 'Concentration Curl', 
                 sets: '3 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: tay trước',
                 technique: 'Ngồi, tì mặt sau khuỷu vào mặt trong đùi. Cuốn tạ lên, siết tay trước rồi hạ gần thẳng tay; không di chuyển khuỷu',
-                image: 'concentration-curl.jpg'
+                image: 'https://cdn.athlemove.com/44b7bd61-5f68-4796-bfe9-898f2a5f9b7f.webp?width=1200&signature=db59d9a6edf1dd87c3895345a7efb3f4a750beb43638f559b03de8ff5624230e'
             },
             { 
                 name: 'Band Curl', 
                 sets: '3 hiệp × 12–20 lần', 
                 notes: 'Tác động: tay trước',
                 technique: 'Đứng lên giữa dây và cầm hai đầu dây. Giữ khuỷu sát thân, cuốn tay lên rồi hạ chậm, luôn duy trì độ căng của dây',
-                image: 'band-curl.jpg'
+                image: 'https://cdn.athlemove.com/0f3d8739-454b-4b02-b869-1d4aa23eb976.webp?width=1200&signature=c5c4ce91c142586a3f654f8ee2342b6a02d2b11bd2e1b8c6c5da83aa654ad910'
             },
             { 
                 name: 'Dumbbell Reverse Curl', 
                 sets: '2 hiệp × 12–15 lần mỗi bên', 
                 notes: 'Tác động: cẳng tay và cơ cánh tay',
                 technique: 'Cầm tạ với lòng bàn tay hướng xuống, giữ khuỷu sát thân và cuốn tạ lên. Giữ cổ tay thẳng, không bẻ cổ tay hoặc đung đưa người',
-                image: 'dumbbell-reverse-curl.jpg'
+                image: 'https://workoutguru.fit/wp-content/uploads/2023/10/dumbbell-revers-grip-biceps-curl-video-exercise-guide-tips.jpg'
             },
             { 
                 name: 'Farmer Hold', 
                 sets: '2 hiệp × 30–60 giây', 
                 notes: 'Tác động: lực nắm, cẳng tay, cầu vai và core',
                 technique: 'Cầm tạ nặng hai bên, đứng cao người, siết bụng và nắm tạ thật chắc. Không nghiêng người hoặc để vai đổ ra trước',
-                image: 'farmer-hold.jpg'
+                image: 'https://tse4.mm.bing.net/th/id/OIP.AhBCAr5dIKA3x5tLPAybowHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3'
             },
             { 
                 name: 'Hanging Knee Raise', 
                 sets: '3 hiệp × 8–15 lần', 
                 notes: 'Tác động: bụng và cơ gập hông',
                 technique: 'Treo người trên xà, siết bụng kéo gối về phía ngực và cuộn nhẹ xương chậu lên. Hạ chân có kiểm soát; không đung đưa',
-                image: 'hanging-knee-raise.jpg'
+                image: 'https://cdn.athlemove.com/0f59067b-99c9-4bb9-bf0f-d124f3a41512.webp?width=1080&signature=cd01cf393a552a9ec3ce2ecadf5afd3972b8243268c90ee12d9782994db7408b'
             }
         ]
     },
     0: {
         name: 'Chủ nhật',
-        focus: 'Rest',
-        subtitle: 'Nghỉ hoàn toàn',
+        focus: 'Nghỉ hoặc tập tự do',
         isRest: true,
-        exercises: [
-            { 
-                name: 'Nghỉ ngơi hoàn toàn', 
-                sets: '', 
-                notes: 'Hồi phục: Nghỉ hoàn toàn hoặc chỉ đi bộ nhẹ',
-                technique: 'Không cần chạy nặng hoặc tập bù. Ưu tiên ăn đủ protein, uống đủ nước và ngủ đủ giấc để chuẩn bị cho Thứ 2',
-                image: 'rest-day.jpg'
-            }
-        ]
+        exercises: []
     }
 };
 
+// Chỉ tính dữ liệu từ ngày bắt đầu lộ trình tập luyện.
+const PROGRAM_START_DATE = '2025-12-31';
+
 // State management
 let currentWeekOffset = 0;
+let activeDayIndex = (new Date().getDay() + 6) % 7;
 let workoutProgress = loadProgress();
 let stopwatchInterval = null;
 let stopwatchTime = 0;
@@ -322,11 +301,16 @@ let stopwatchHistory = loadStopwatchHistory();
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
+    applySavedTheme();
     renderWorkouts();
     updateStats();
     setupEventListeners();
     setupNavigation();
+    restorePageFromHash();
     setupMobileMenu();
+    setupThemeSettings();
+    setupBrandReload();
+    setupConfirmDialog();
     startLiveClock();
     updateStopwatchHistory();
     
@@ -341,48 +325,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function setupNavigation() {
+function activatePage(pageName, updateUrl = false) {
     const navItems = document.querySelectorAll('.nav-item');
     const pages = document.querySelectorAll('.content-page');
-    
-    navItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Remove active from all
-            navItems.forEach(nav => nav.classList.remove('active'));
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Add active to clicked
-            item.classList.add('active');
-            const pageName = item.dataset.page;
-            const targetPage = document.getElementById(`${pageName}-page`);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-            
-            // Update page title
-            const pageTitle = document.querySelector('.page-title');
-            const pageMeta = {
-                workout: { eyebrow: 'Kế hoạch tuần', title: 'Lịch tập luyện', subtitle: 'Tập trung vào vai, lưng, ngực và tay.' },
-                stats: { eyebrow: 'Nhìn lại hành trình', title: 'Tiến độ tập luyện', subtitle: 'Theo dõi nhịp độ và thành tích của bạn.' },
-                exercises: { eyebrow: 'Theo dõi thời lượng', title: 'Bấm giờ tập luyện', subtitle: 'Theo dõi thời lượng cho từng buổi tập.' },
-                settings: { eyebrow: 'Không gian của bạn', title: 'Cài đặt & dữ liệu', subtitle: 'Quản lý dữ liệu tập luyện của bạn.' }
-            };
-            const meta = pageMeta[pageName] || { eyebrow: '', title: 'Gym Tracker', subtitle: '' };
-            pageTitle.textContent = meta.title;
-            document.querySelector('.page-subtitle').textContent = meta.subtitle;
-            document.getElementById('headerEyebrow').textContent = meta.eyebrow;
-            
-            // If stats page, update statistics
-            if (pageName === 'stats') {
-                updateStatisticsPage();
-            }
-            
-            // Close mobile menu if open
-            closeMobileMenu();
+    const currentNav = document.querySelector(`.nav-item[data-page="${pageName}"]`);
+    const targetPage = document.getElementById(`${pageName}-page`);
+    if (!currentNav || !targetPage) return;
+
+    navItems.forEach(nav => nav.classList.remove('active'));
+    pages.forEach(page => page.classList.remove('active'));
+    currentNav.classList.add('active');
+    targetPage.classList.add('active');
+
+    const pageTitle = document.querySelector('.page-title');
+    const pageMeta = {
+        workout: { eyebrow: 'Kế hoạch tuần', title: 'Lịch tập luyện', subtitle: '' },
+        stats: { eyebrow: 'Nhìn lại hành trình', title: 'Tiến độ tập luyện', subtitle: '' },
+        exercises: { eyebrow: 'Theo dõi thời lượng', title: 'Bấm giờ tập luyện', subtitle: 'Theo dõi thời lượng cho từng buổi tập.' },
+        settings: { eyebrow: 'Không gian của bạn', title: 'Cài đặt & dữ liệu', subtitle: 'Quản lý dữ liệu tập luyện của bạn.' }
+    };
+    const meta = pageMeta[pageName];
+    pageTitle.textContent = meta.title;
+    document.querySelector('.page-subtitle').textContent = meta.subtitle;
+    document.getElementById('headerEyebrow').textContent = meta.eyebrow;
+
+    if (pageName === 'stats') updateStatisticsPage();
+    if (updateUrl) history.replaceState(null, '', `#${pageName}`);
+    closeMobileMenu();
+}
+
+function restorePageFromHash() {
+    const pageName = window.location.hash.slice(1);
+    if (pageName) activatePage(pageName);
+}
+
+function setupNavigation() {
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            activatePage(item.dataset.page, true);
         });
     });
+    window.addEventListener('hashchange', restorePageFromHash);
 }
 
 function updateStatisticsPage() {
@@ -394,13 +378,18 @@ function updateStatisticsPage() {
     document.getElementById('statsTotalWorkouts').textContent = stats.totalWorkouts;
     document.getElementById('statsThisWeek').textContent = stats.thisWeekWorkouts;
     document.getElementById('statsTotalExercises').textContent = stats.totalExercises;
+    document.getElementById('statsMissedDays').textContent = stats.missedDays;
     
     // Update week progress
     const weekPercent = Math.round((stats.thisWeekWorkouts / 7) * 100);
     document.getElementById('statsWeekProgress').style.width = weekPercent + '%';
     document.getElementById('statsWeekPercent').textContent = weekPercent + '%';
     
-    // Update weekly chart
+    // Update weekly chart (Monday to Sunday)
+    ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].forEach((label, index) => {
+        const labelEl = document.querySelectorAll('.bar-label')[index];
+        if (labelEl) labelEl.textContent = label;
+    });
     stats.weeklyData.forEach((completed, index) => {
         const barFill = document.getElementById(`barDay${index}`);
         if (barFill) {
@@ -430,25 +419,69 @@ function updateStatisticsPage() {
     document.getElementById('statsActiveDays').textContent = stats.activeDays;
     document.getElementById('statsAvgPerWeek').textContent = stats.avgPerWeek.toFixed(1);
     document.getElementById('statsBestStreak').textContent = stats.bestStreak;
+    renderMonthlyChart(Number(document.getElementById('monthlyRange').value));
+}
+
+function renderMonthlyChart(monthCount) {
+    const chart = document.getElementById('monthlyChart');
+    if (!chart) return;
+
+    const now = new Date();
+    const months = [];
+
+    for (let offset = monthCount - 1; offset >= 0; offset--) {
+        const monthDate = new Date(now.getFullYear(), now.getMonth() - offset, 1, 12);
+        const year = monthDate.getFullYear();
+        const month = monthDate.getMonth();
+        const lastDay = offset === 0
+            ? now.getDate()
+            : new Date(year, month + 1, 0).getDate();
+        let scheduledDays = 0;
+        let completedDays = 0;
+
+        for (let day = 1; day <= lastDay; day++) {
+            // Giờ trưa giúp ngày hiển thị luôn đúng ở múi giờ Việt Nam.
+            const date = new Date(year, month, day, 12);
+            const workout = workoutData[date.getDay()];
+            if (!workout || workout.isRest || !isProgramDate(date)) continue;
+
+            scheduledDays++;
+            if (workoutProgress[formatDate(date)]?.completed) completedDays++;
+        }
+
+        months.push({
+            label: `T${month + 1}/${String(year).slice(-2)}`,
+            percent: scheduledDays ? Math.round((completedDays / scheduledDays) * 100) : 0,
+            completedDays,
+            scheduledDays,
+            hasDataWindow: scheduledDays > 0
+        });
+    }
+
+    chart.innerHTML = months.map(({ label, percent, completedDays, scheduledDays, hasDataWindow }) => `
+        <div class="monthly-chart-bar ${hasDataWindow ? (percent === 0 ? 'zero' : '') : 'not-started'}" title="${hasDataWindow ? `${label}: ${percent}% (${completedDays}/${scheduledDays} buổi)` : `${label}: Trước khi bắt đầu lộ trình`}">
+            <span class="monthly-percent">${hasDataWindow ? `${percent}%` : '—'}</span>
+            <div class="monthly-bar-track"><span class="monthly-bar-fill" style="height:${hasDataWindow ? Math.max(percent, 3) : 3}%"></span></div>
+            <span class="monthly-bar-label">${label}</span>
+        </div>
+    `).join('');
 }
 
 function calculateAllStats() {
-    const allDates = Object.keys(workoutProgress);
+    const allDates = Object.keys(workoutProgress).filter(isProgramDateKey);
     
     // Total workouts
     const totalWorkouts = allDates.filter(date => workoutProgress[date].completed).length;
     
     // This week workouts
-    const weekDates = getWeekDates();
+    const weekDates = getCurrentWeekDates();
     const thisWeekWorkouts = weekDates.filter(date => {
-        const dateStr = formatDate(date);
-        return workoutProgress[dateStr]?.completed;
+        return isDayConfirmed(date);
     }).length;
     
     // Weekly data (last 7 days)
     const weeklyData = weekDates.map(date => {
-        const dateStr = formatDate(date);
-        return workoutProgress[dateStr]?.completed || false;
+        return isDayConfirmed(date);
     });
     
     // Current streak
@@ -558,6 +591,7 @@ function calculateAllStats() {
     
     // Active days
     const activeDays = allDates.length;
+    const missedDays = calculateMissedDays(weekDates);
     
     // Average per week
     const weeks = activeDays > 0 ? Math.ceil(activeDays / 7) : 1;
@@ -573,8 +607,20 @@ function calculateAllStats() {
         muscleGroups,
         completionRate,
         activeDays,
-        avgPerWeek
+        avgPerWeek,
+        missedDays
     };
+}
+
+function calculateMissedDays(weekDates) {
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+
+    return weekDates.filter(date => {
+        const workout = workoutData[date.getDay()];
+        const dateStr = formatDate(date);
+        return isProgramDate(date) && !workout.isRest && date <= today && !workoutProgress[dateStr]?.completed;
+    }).length;
 }
 
 function setupMobileMenu() {
@@ -608,12 +654,18 @@ function closeMobileMenu() {
 
 function setupEventListeners() {
     document.getElementById('prevWeek').addEventListener('click', () => {
+        if (isBeforeProgramStartWeek(currentWeekOffset - 1)) {
+            showToast('Không phải thời gian bắt đầu.', 'error');
+            return;
+        }
         currentWeekOffset--;
+        activeDayIndex = 0;
         renderWorkouts();
     });
 
     document.getElementById('nextWeek').addEventListener('click', () => {
         currentWeekOffset++;
+        activeDayIndex = 0;
         renderWorkouts();
     });
 
@@ -624,12 +676,36 @@ function setupEventListeners() {
             closeModal();
         }
     });
+
+    document.getElementById('monthlyRange').addEventListener('change', event => {
+        renderMonthlyChart(Number(event.target.value));
+    });
+
+    const dataMenu = document.querySelector('.data-menu');
+    document.addEventListener('click', event => {
+        if (dataMenu?.open && !dataMenu.contains(event.target)) dataMenu.removeAttribute('open');
+    });
+    dataMenu?.addEventListener('click', event => {
+        if (event.target.closest('.data-menu-list button')) dataMenu.removeAttribute('open');
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && dataMenu?.open) dataMenu.removeAttribute('open');
+    });
 }
 
 function getWeekDates() {
+    return getWeekDatesForOffset(currentWeekOffset);
+}
+
+function getCurrentWeekDates() {
+    return getWeekDatesForOffset(0);
+}
+
+function getWeekDatesForOffset(weekOffset) {
     const now = new Date();
     const startOfWeek = new Date(now);
-    startOfWeek.setDate(now.getDate() - now.getDay() + (currentWeekOffset * 7));
+    const mondayOffset = (now.getDay() + 6) % 7;
+    startOfWeek.setDate(now.getDate() - mondayOffset + (weekOffset * 7));
     
     const dates = [];
     for (let i = 0; i < 7; i++) {
@@ -641,12 +717,31 @@ function getWeekDates() {
     return dates;
 }
 
+function isBeforeProgramStartWeek(weekOffset) {
+    const requestedWeekStart = getWeekDatesForOffset(weekOffset)[0];
+    const programStart = new Date(2025, 11, 31, 12);
+    const programWeekStart = new Date(programStart);
+    programWeekStart.setDate(programStart.getDate() - ((programStart.getDay() + 6) % 7));
+    programWeekStart.setHours(0, 0, 0, 0);
+    requestedWeekStart.setHours(0, 0, 0, 0);
+    return requestedWeekStart < programWeekStart;
+}
+
 function formatDate(date) {
     return date.toISOString().split('T')[0];
 }
 
+function isProgramDate(date) {
+    return formatDate(date) >= PROGRAM_START_DATE;
+}
+
+function isProgramDateKey(dateKey) {
+    return typeof dateKey === 'string' && dateKey >= PROGRAM_START_DATE;
+}
+
 function renderWorkouts() {
     const container = document.getElementById('workoutContainer');
+    const calendar = document.getElementById('weekCalendar');
     const dates = getWeekDates();
     const weekDisplay = document.getElementById('weekDisplay');
     
@@ -661,19 +756,35 @@ function renderWorkouts() {
         weekDisplay.textContent = `Tuần ${firstDate.getDate()}/${firstDate.getMonth() + 1}`;
     }
     
-    container.innerHTML = '';
-    
-    dates.forEach((date, index) => {
-        const dayKey = index; // 0 = Sunday, 1 = Monday, etc.
-        const workout = workoutData[dayKey];
+    calendar.innerHTML = dates.map((date, index) => {
+        const workout = workoutData[date.getDay()];
         const dateStr = formatDate(date);
-        const isCompleted = workoutProgress[dateStr]?.completed || false;
-        
-        const card = createWorkoutCard(workout, date, dateStr, isCompleted);
-        container.appendChild(card);
-    });
+        const completed = workoutProgress[dateStr]?.completed || false;
+        const isToday = formatDate(date) === formatDate(new Date());
+        const dayShort = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][date.getDay()];
+        const state = workout.isRest ? 'rest' : completed ? 'completed' : '';
+        return `
+            <button class="calendar-day ${activeDayIndex === index ? 'active' : ''} ${isToday ? 'today' : ''} ${state}" onclick="selectWorkoutDay(${index})" aria-pressed="${activeDayIndex === index}">
+                <span class="calendar-day-name">${dayShort}</span>
+                <strong>${date.getDate()}</strong>
+                <span class="calendar-day-status">${workout.isRest ? workout.focus : completed ? 'Hoàn thành' : isToday ? 'Hôm nay' : workout.focus}</span>
+            </button>
+        `;
+    }).join('');
+
+    const date = dates[activeDayIndex] || dates[0];
+    const workout = workoutData[date.getDay()];
+    const dateStr = formatDate(date);
+    const isCompleted = workoutProgress[dateStr]?.completed || false;
+    container.innerHTML = '';
+    container.appendChild(createWorkoutCard(workout, date, dateStr, isCompleted));
     
     updateStats();
+}
+
+function selectWorkoutDay(index) {
+    activeDayIndex = index;
+    renderWorkouts();
 }
 
 function createWorkoutCard(workout, date, dateStr, isCompleted) {
@@ -683,6 +794,7 @@ function createWorkoutCard(workout, date, dateStr, isCompleted) {
     const dateDisplay = `${date.getDate()}/${date.getMonth() + 1}`;
     
     if (workout.isRest) {
+        const restConfirmed = isAutoConfirmedRestDay(date);
         card.innerHTML = `
             <div class="workout-header">
                 <div class="day-info">
@@ -691,12 +803,8 @@ function createWorkoutCard(workout, date, dateStr, isCompleted) {
                     <div class="focus">${workout.focus}</div>
                     ${workout.subtitle ? `<div class="subtitle">${workout.subtitle}</div>` : ''}
                 </div>
-                <input type="checkbox" class="complete-checkbox" ${isCompleted ? 'checked' : ''} 
-                       onchange="toggleDayComplete('${dateStr}')">
-            </div>
-            <div class="rest-day">
-                <p>🧘‍♂️ ${workout.exercises[0].name}</p>
-                ${workout.exercises[1] ? `<p>${workout.exercises[1].name}</p>` : ''}
+                <input type="checkbox" class="complete-checkbox" ${restConfirmed ? 'checked' : ''} disabled
+                       title="${restConfirmed ? 'Nghỉ theo lịch đã được hệ thống xác nhận' : 'Ngày nghỉ này chưa tới'}" aria-label="${restConfirmed ? 'Nghỉ theo lịch đã xác nhận' : 'Ngày nghỉ chưa tới'}">
             </div>
         `;
     } else {
@@ -804,9 +912,10 @@ function openExerciseDetail(dateStr, exerciseIdx) {
     const notes = workoutProgress[dateStr]?.notes?.[exerciseIdx] || '';
     
     // Image section
+    const imageSource = exercise.image?.startsWith('http') ? exercise.image : `images/${exercise.image}`;
     const imageHTML = exercise.image ? `
         <div class="exercise-image">
-            <img src="images/${exercise.image}" alt="${exercise.name}" onerror="this.style.display='none'">
+            <img src="${imageSource}" alt="${exercise.name}" onerror="this.style.display='none'">
         </div>
     ` : '';
     
@@ -814,20 +923,20 @@ function openExerciseDetail(dateStr, exerciseIdx) {
         ${imageHTML}
         
         <div class="exercise-detail">
-            <h3>📋 Chi tiết bài tập</h3>
+            <h3>Chi tiết bài tập</h3>
             <p><strong>Hiệp × Số lần:</strong> ${exercise.sets}</p>
-            ${exercise.notes ? `<p><strong>💪 Tác động:</strong> ${exercise.notes}</p>` : ''}
+            ${exercise.notes ? `<p><strong>Tác động:</strong> ${exercise.notes}</p>` : ''}
         </div>
         
         ${exercise.technique ? `
             <div class="technique-section">
-                <h4>🎯 Kỹ thuật thực hiện</h4>
+            <h4>Kỹ thuật thực hiện</h4>
                 <p>${exercise.technique}</p>
             </div>
         ` : ''}
         
         <div class="notes-section">
-            <h4>📝 Ghi chú cá nhân</h4>
+            <h4>Ghi chú cá nhân</h4>
             <textarea id="exerciseNotes" placeholder="Cảm nhận, điều chỉnh...">${notes}</textarea>
             <button class="save-log-btn" onclick="saveExerciseNotes('${dateStr}', ${exerciseIdx})" 
                     style="margin-top: 0.5rem;">
@@ -870,8 +979,7 @@ function updateStats() {
     let completedDays = 0;
     
     dates.forEach(date => {
-        const dateStr = formatDate(date);
-        if (workoutProgress[dateStr]?.completed) {
+        if (isDayConfirmed(date)) {
             completedDays++;
         }
     });
@@ -889,6 +997,21 @@ function updateStats() {
     document.getElementById('sidebarStreak').textContent = `${streak} 🔥`;
 }
 
+function isAutoConfirmedRestDay(date) {
+    const workout = workoutData[date.getDay()];
+    if (!workout?.isRest || !isProgramDate(date)) return false;
+
+    const comparedDate = new Date(date);
+    comparedDate.setHours(0, 0, 0, 0);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return comparedDate <= today;
+}
+
+function isDayConfirmed(date) {
+    return isProgramDate(date) && (isAutoConfirmedRestDay(date) || Boolean(workoutProgress[formatDate(date)]?.completed));
+}
+
 function calculateStreak() {
     const today = new Date();
     let streak = 0;
@@ -896,6 +1019,7 @@ function calculateStreak() {
     for (let i = 0; i < 365; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() - i);
+        if (!isProgramDate(date)) break;
         const dateStr = formatDate(date);
         
         if (workoutProgress[dateStr]?.completed) {
@@ -919,7 +1043,17 @@ function loadProgress() {
 
 // Export and Import functions
 function exportData() {
-    const dataStr = JSON.stringify(workoutProgress, null, 2);
+    showConfirm({
+        title: 'Xuất dữ liệu?',
+        message: 'Tạo một file sao lưu dữ liệu Gym Tracker trên máy này?',
+        confirmLabel: 'Xuất dữ liệu',
+        onConfirm: downloadDataBackup
+    });
+}
+
+function downloadDataBackup() {
+    const backup = { workoutProgress, stopwatchHistory, exportedAt: new Date().toISOString() };
+    const dataStr = JSON.stringify(backup, null, 2);
     const dataBlob = new Blob([dataStr], { type: 'application/json' });
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
@@ -927,6 +1061,7 @@ function exportData() {
     link.download = `gym-tracker-backup-${new Date().toISOString().split('T')[0]}.json`;
     link.click();
     URL.revokeObjectURL(url);
+    showToast('Đã xuất bản sao lưu JSON.', 'success');
 }
 
 function importData() {
@@ -939,12 +1074,15 @@ function importData() {
         reader.onload = (event) => {
             try {
                 const imported = JSON.parse(event.target.result);
-                workoutProgress = imported;
+                workoutProgress = imported.workoutProgress || imported;
+                if (Array.isArray(imported.stopwatchHistory)) stopwatchHistory = imported.stopwatchHistory;
                 saveProgress();
+                saveStopwatchHistory();
                 renderWorkouts();
-                alert('✓ Import thành công!');
+                updateStopwatchHistory();
+                showToast('Đã nhập dữ liệu thành công.', 'success');
             } catch (error) {
-                alert('✗ File không hợp lệ!');
+                showToast('File JSON không hợp lệ.', 'error');
             }
         };
         reader.readAsText(file);
@@ -953,16 +1091,134 @@ function importData() {
 }
 
 function clearAllData() {
-    if (confirm('⚠️ Xóa toàn bộ dữ liệu? Hành động này không thể hoàn tác!')) {
+    showConfirm({
+        title: 'Xóa toàn bộ dữ liệu?',
+        message: 'Data sẽ mất hết.',
+        confirmLabel: 'Xóa dữ liệu',
+        danger: true,
+        onConfirm: () => {
         workoutProgress = {};
+        stopwatchHistory = [];
         saveProgress();
+        saveStopwatchHistory();
         renderWorkouts();
-        alert('✓ Đã xóa toàn bộ dữ liệu');
+        updateStopwatchHistory();
+        showToast('Đã xóa dữ liệu trên thiết bị này.', 'success');
+        }
+    });
+}
+
+function getWorkoutStatus(date, workout) {
+    if (!isProgramDate(date)) return 'Chưa bắt đầu';
+    if (workout.isRest) return 'Nghỉ theo lịch';
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+    if (date > today) return 'Chưa đến lịch';
+    return workoutProgress[formatDate(date)]?.completed ? 'Hoàn thành' : 'Bỏ tập';
+}
+
+function getWorkoutMinutesForDate(date) {
+    const dateKey = formatDate(date);
+    return Math.round(stopwatchHistory
+        .filter(session => formatDate(new Date(session.date)) === dateKey)
+        .reduce((total, session) => total + session.duration, 0) / 60000);
+}
+
+function escapeXml(value) {
+    return String(value ?? '').replace(/[<>&'\"]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' }[char]));
+}
+
+function exportWeeklyReport(weeks) {
+    showConfirm({
+        title: `Xuất thống kê ${weeks} tuần?`,
+        message: 'Tạo file Excel thống kê từ dữ liệu hiện có?',
+        confirmLabel: 'Xuất Excel',
+        onConfirm: () => downloadWeeklyReport(weeks)
+    });
+}
+
+function downloadWeeklyReport(weeks) {
+    const today = new Date();
+    const start = new Date(today);
+    const mondayOffset = (start.getDay() + 6) % 7;
+    start.setDate(start.getDate() - mondayOffset - ((weeks - 1) * 7));
+    const rows = [];
+
+    for (let offset = 0; offset < weeks * 7; offset++) {
+        const date = new Date(start);
+        date.setDate(start.getDate() + offset);
+        const workout = workoutData[date.getDay()];
+        const progress = workoutProgress[formatDate(date)] || {};
+        const exerciseCount = workout.exercises.length;
+        const completedExercises = Object.values(progress.exercises || {}).filter(Boolean).length;
+        rows.push([
+            formatDate(date),
+            workout.name,
+            workout.focus,
+            getWorkoutStatus(date, workout),
+            completedExercises,
+            exerciseCount,
+            getWorkoutMinutesForDate(date),
+            Object.keys(progress.notes || {}).length
+        ]);
     }
+
+    // Ngày mới nhất đứng trên cùng để mở báo cáo là xem được dữ liệu gần đây ngay.
+    rows.reverse();
+
+    const headings = ['Ngày', 'Thứ', 'Nhóm cơ / lịch', 'Trạng thái', 'Bài đã xong', 'Tổng bài', 'Bấm giờ (phút)', 'Ghi chú'];
+    const cell = (value, styleId = 'text', type = 'String') =>
+        `<Cell ss:StyleID="${styleId}"><Data ss:Type="${type}">${escapeXml(value)}</Data></Cell>`;
+    const statusStyle = status => ({
+        'Hoàn thành': 'status-good',
+        'Bỏ tập': 'status-bad',
+        'Nghỉ theo lịch': 'status-rest',
+        'Chưa đến lịch': 'status-future',
+        'Chưa bắt đầu': 'status-future'
+    }[status] || 'text');
+    const toReportCells = ([date, day, focus, status, completed, total, minutes, notes]) => [
+        cell(date),
+        cell(day),
+        cell(focus),
+        cell(status, statusStyle(status)),
+        cell(completed, status === 'Nghỉ theo lịch' ? 'number-rest' : completed > 0 ? 'number-good' : 'number-bad', 'Number'),
+        cell(total, 'number', 'Number'),
+        cell(minutes, 'number', 'Number'),
+        cell(notes, 'number', 'Number')
+    ].join('');
+
+    // SpreadsheetML sử dụng đơn vị point: các giá trị dưới đây tương ứng lần lượt
+    // với khoảng 111px, 98px, 226px, 171px, 171px, 171px và 112px trong Excel.
+    const columnWidths = [83.25, 73.5, 169.5, 128.25, 128.25, 128.25, 84];
+    const columns = columnWidths.map(width => `<Column ss:AutoFitWidth="0" ss:Width="${width}"/>`).join('');
+    const bodyBorders = '<Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D5DCE5"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D5DCE5"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D5DCE5"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D5DCE5"/></Borders>';
+    const headerBorders = '<Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#34445C"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#34445C"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#34445C"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#34445C"/></Borders>';
+    const spreadsheetStyles = `<Styles>
+        <Style ss:ID="header"><Font ss:Bold="1" ss:Color="#FFFFFF"/><Interior ss:Color="#18263D" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>${headerBorders}</Style>
+        <Style ss:ID="text"><Alignment ss:Vertical="Center" ss:WrapText="1"/>${bodyBorders}</Style>
+        <Style ss:ID="number"><Alignment ss:Horizontal="Center" ss:Vertical="Center"/>${bodyBorders}</Style>
+        <Style ss:ID="status-good"><Font ss:Color="#006100"/><Interior ss:Color="#C6EFCE" ss:Pattern="Solid"/><Alignment ss:Vertical="Center" ss:WrapText="1"/>${bodyBorders}</Style>
+        <Style ss:ID="status-bad"><Font ss:Color="#9C0006"/><Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/><Alignment ss:Vertical="Center" ss:WrapText="1"/>${bodyBorders}</Style>
+        <Style ss:ID="status-rest"><Font ss:Color="#595959"/><Interior ss:Color="#E7E6E6" ss:Pattern="Solid"/><Alignment ss:Vertical="Center" ss:WrapText="1"/>${bodyBorders}</Style>
+        <Style ss:ID="status-future"><Font ss:Color="#1F2937"/><Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/><Alignment ss:Vertical="Center" ss:WrapText="1"/>${bodyBorders}</Style>
+        <Style ss:ID="number-good"><Font ss:Color="#006100"/><Interior ss:Color="#C6EFCE" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:Vertical="Center"/>${bodyBorders}</Style>
+        <Style ss:ID="number-bad"><Font ss:Color="#9C0006"/><Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:Vertical="Center"/>${bodyBorders}</Style>
+        <Style ss:ID="number-rest"><Font ss:Color="#595959"/><Interior ss:Color="#E7E6E6" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:Vertical="Center"/>${bodyBorders}</Style>
+    </Styles>`;
+    const xml = `<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">${spreadsheetStyles}<Worksheet ss:Name="Báo cáo ${weeks} tuần"><Table>${columns}<Row ss:Height="25" ss:StyleID="header">${headings.map(heading => cell(heading, 'header')).join('')}</Row>${rows.map(row => `<Row ss:Height="22">${toReportCells(row)}</Row>`).join('')}</Table></Worksheet></Workbook>`;
+    const blob = new Blob([xml], { type: 'application/vnd.ms-excel;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `gym-tracker-bao-cao-${weeks}-tuan-${formatDate(today)}.xls`;
+    link.click();
+    URL.revokeObjectURL(url);
+    showToast(`Đã xuất báo cáo ${weeks} tuần dạng Excel.`, 'success');
 }
 
 // ==================== LIVE CLOCK ====================
 function startLiveClock() {
+    let renderedDate = formatDate(new Date());
     function updateClock() {
         const now = new Date();
         
@@ -985,6 +1241,14 @@ function startLiveClock() {
         
         if (timeEl) timeEl.textContent = timeStr;
         if (dateEl) dateEl.textContent = dateStr;
+
+        const todayKey = formatDate(now);
+        if (todayKey !== renderedDate) {
+            renderedDate = todayKey;
+            currentWeekOffset = 0;
+            activeDayIndex = (now.getDay() + 6) % 7;
+            renderWorkouts();
+        }
     }
     
     updateClock();
@@ -1050,7 +1314,7 @@ function updateStopwatchDisplay() {
 
 function saveWorkoutTime() {
     if (stopwatchTime === 0) {
-        alert('⚠️ Thời gian phải lớn hơn 0!');
+        showToast('Thời gian phải lớn hơn 0.', 'error');
         return;
     }
     
@@ -1068,7 +1332,7 @@ function saveWorkoutTime() {
     
     resetStopwatch();
     
-    alert('✓ Đã lưu phiên tập!');
+    showToast('Đã lưu phiên tập.', 'success');
 }
 
 function loadStopwatchHistory() {
@@ -1159,11 +1423,82 @@ function filterHistory(filter) {
 }
 
 function deleteHistoryItem(id) {
-    if (confirm('⚠️ Xóa phiên tập này?')) {
+    showConfirm({
+        title: 'Xóa phiên tập?',
+        message: 'Phiên tập này sẽ bị xóa khỏi lịch sử trên thiết bị.',
+        confirmLabel: 'Xóa phiên',
+        danger: true,
+        onConfirm: () => {
         stopwatchHistory = stopwatchHistory.filter(s => s.id !== id);
         saveStopwatchHistory();
         updateStopwatchHistory();
-    }
+        showToast('Đã xóa phiên tập.', 'success');
+        }
+    });
+}
+
+function showToast(message, type = 'success') {
+    const region = document.getElementById('toastRegion');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    region.appendChild(toast);
+    window.setTimeout(() => toast.remove(), 3200);
+}
+
+function setupConfirmDialog() {
+    const dialog = document.getElementById('confirmDialog');
+    const cancel = document.getElementById('confirmCancel');
+    cancel.addEventListener('click', () => { dialog.hidden = true; });
+}
+
+function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = false, onConfirm }) {
+    const dialog = document.getElementById('confirmDialog');
+    const accept = document.getElementById('confirmAccept');
+    document.getElementById('confirmTitle').textContent = title;
+    document.getElementById('confirmMessage').textContent = message;
+    accept.textContent = confirmLabel;
+    accept.classList.toggle('danger-btn', danger);
+    accept.classList.toggle('primary-btn', !danger);
+    accept.onclick = () => {
+        dialog.hidden = true;
+        onConfirm();
+    };
+    dialog.hidden = false;
+    accept.focus();
+}
+
+function setupBrandReload() {
+    document.getElementById('brandHome').addEventListener('click', () => {
+        const pageHash = window.location.hash;
+        window.location.assign(`${window.location.pathname}?reload=${Date.now()}${pageHash}`);
+    });
+}
+
+function setupThemeSettings() {
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+        button.addEventListener('click', () => {
+            const choice = button.dataset.themeChoice;
+            localStorage.setItem('gymTrackerTheme', choice);
+            applyTheme(choice);
+            showToast('Đã cập nhật giao diện.', 'success');
+        });
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (localStorage.getItem('gymTrackerTheme') === 'system') applyTheme('system');
+    });
+}
+
+function applySavedTheme() {
+    applyTheme(localStorage.getItem('gymTrackerTheme') || 'system');
+}
+
+function applyTheme(choice) {
+    const isDark = choice === 'dark' || (choice === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.body.dataset.theme = isDark ? 'dark' : 'light';
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+        button.classList.toggle('active', button.dataset.themeChoice === choice);
+    });
 }
 
 // Make functions globally accessible
@@ -1181,3 +1516,5 @@ window.resetStopwatch = resetStopwatch;
 window.saveWorkoutTime = saveWorkoutTime;
 window.filterHistory = filterHistory;
 window.deleteHistoryItem = deleteHistoryItem;
+window.selectWorkoutDay = selectWorkoutDay;
+window.exportWeeklyReport = exportWeeklyReport;

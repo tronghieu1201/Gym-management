@@ -1,9 +1,10 @@
-const CACHE_NAME = 'gym-tracker-v2';
+const CACHE_NAME = 'gym-tracker-v4';
 const urlsToCache = [
     './',
     './index.html',
-    './styles.css',
-    './app.js',
+    './styles.css?v=20260816-2',
+    './styles-overrides.css?v=20260816-2',
+    './app.js?v=20260816-2',
     './manifest.json'
 ];
 
@@ -12,18 +13,24 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(urlsToCache))
+            .then(() => self.skipWaiting())
     );
 });
 
-// Fetch from cache, fallback to network
+// Ưu tiên mạng để HTML, CSS và JS luôn cùng một phiên bản sau khi deploy.
 self.addEventListener('fetch', (event) => {
+    if (event.request.method !== 'GET') return;
+
     event.respondWith(
-        caches.match(event.request)
+        fetch(event.request)
             .then((response) => {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
+                const copy = response.clone();
+                caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+                return response;
+            })
+            .catch(() => {
+                if (event.request.mode === 'navigate') return caches.match('./index.html');
+                return caches.match(event.request);
             })
     );
 });
@@ -38,7 +45,7 @@ self.addEventListener('activate', (event) => {
                         return caches.delete(cacheName);
                     }
                 })
-            );
+            ).then(() => self.clients.claim());
         })
     );
 });
