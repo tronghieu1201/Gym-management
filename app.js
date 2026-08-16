@@ -7,14 +7,14 @@ const workoutData = {
         exercises: [
             { 
                 name: 'Dumbbell Floor Press', 
-                sets: '4 hiệp × 8–12 lần', 
+                sets: '3 hiệp × 8–12 lần', 
                 notes: 'Tác động: chính vào ngực; phụ vào tay sau và vai trước',
                 technique: 'Nằm ngửa trên sàn, co gối, giữ tạ ngang ngực và khuỷu chếch khỏi thân 30–45°. Hạ bắp tay chạm nhẹ sàn rồi đẩy tạ thẳng lên; không xoè khuỷu ngang 90°',
                 image: 'https://cdn.athlemove.com/b2fe571e-2e10-4128-8daf-298e9fad659c.png?width=1200&format=webp&signature=1f1a44f205163396e69bb53c30cb1b4e100102ed97aeaf30fb6f1b4dbc460446'
             },
             { 
                 name: 'Push-up', 
-                sets: '3 hiệp × 8–20 lần', 
+                sets: '2 hiệp × 8–20 lần', 
                 notes: 'Tác động: chính vào ngực; phụ vào tay sau, vai trước và cơ bụng',
                 technique: 'Đặt tay rộng hơn vai một chút, giữ đầu–lưng–mông–chân thành một đường thẳng. Hạ ngực gần chạm sàn với khuỷu chếch 30–45° rồi đẩy lên; không võng lưng',
                 image: 'https://cdn.athlemove.com/466609e7-ccef-49df-906f-43483737c5a0.webp?width=1200&signature=1e2bf6f7f348c256e5de22849618718b550e10f466ee29e9646530e0c6bdb24e'
@@ -28,14 +28,14 @@ const workoutData = {
             },
             { 
                 name: 'Dumbbell Lateral Raise', 
-                sets: '4 hiệp × 12–20 lần', 
+                sets: '3 hiệp × 12–20 lần', 
                 notes: 'Tác động: vai giữa',
                 technique: 'Cầm tạ hai bên, khuỷu hơi cong và nâng cánh tay sang ngang đến gần ngang vai. Dẫn chuyển động bằng khuỷu; không nhún người, quăng tạ hoặc nhún vai',
                 image: 'https://cdn.athlemove.com/2bcf62c7-2686-4935-ae1c-0eaf3b44a88e.webp?width=1200&signature=9224edd1b14266031eb9b1331880d11b6f1a9761f437c6ff819220b7258cdd8a'
             },
             { 
                 name: 'Dumbbell Overhead Triceps Extension', 
-                sets: '3 hiệp × 10–15 lần', 
+                sets: '2 hiệp × 10–15 lần', 
                 notes: 'Tác động: tay sau, nhấn mạnh đầu dài',
                 technique: 'Giữ một quả tạ bằng hai tay trên đầu, cố định bắp tay gần tai. Gập khuỷu hạ tạ ra sau đầu rồi duỗi tay lên; không xoè khuỷu quá rộng',
                 image: 'https://cdn.athlemove.com/0f6b2f14-4dce-4201-8297-952d3c6e510b.webp?width=1200&signature=5466aed9a86efb295038011c40f341afaf3c7365ec4ca0c9397459529b54fc65'
@@ -56,14 +56,14 @@ const workoutData = {
         exercises: [
             { 
                 name: 'Pull-up', 
-                sets: '4 hiệp × 5–10 lần', 
+                sets: '3 hiệp × 5–10 lần', 
                 notes: 'Tác động: chính vào cơ xô và lưng trên; phụ vào tay trước',
                 technique: 'Nắm xà tay sấp, rộng bằng hoặc hơn vai một chút. Từ tư thế treo có kiểm soát, kéo ngực hướng về xà đến khi cằm vượt xà rồi hạ chậm; không đạp hoặc vung chân. Nếu chưa đủ sức: dùng dây hỗ trợ hoặc Negative Pull-up (nhảy lên rồi hạ chậm 3-5 giây)',
                 image: 'https://cdn.shopify.com/s/files/1/0705/5432/1194/files/mikolo-pull-ups-blog-2.png?v=1693468017'
             },
             { 
                 name: 'One-arm Dumbbell Row', 
-                sets: '4 hiệp × 8–15 lần mỗi bên', 
+                sets: '3 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: cơ xô, lưng giữa và cơ quanh bả vai. Nghỉ 2-3 phút',
                 technique: 'Chống một tay lên ghế chắc chắn hoặc đùi, giữ lưng trung lập. Kéo tạ về phía hông, ép bả vai về sau rồi hạ tạ hết tầm; không xoay vặn thân người',
                 image: 'https://cdn.athlemove.com/e84eff2c-8caf-4818-8602-01ad02926e34.webp?width=750&signature=dc8a238f68fd206106cb3f32717103c9a60d8d463df879be52e1e12ffdf2789a'
@@ -77,21 +77,21 @@ const workoutData = {
             },
             { 
                 name: 'Bent-over Dumbbell Rear-delt Fly', 
-                sets: '3 hiệp × 12–20 lần', 
+                sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: vai sau và lưng trên',
                 technique: 'Gập hông, giữ lưng thẳng và khuỷu hơi cong. Dang hai tay sang hai bên đến gần ngang thân rồi hạ chậm; không nhún vai hoặc quăng tạ',
                 image: 'https://cdn.athlemove.com/e7b091af-8611-4fd4-b9a8-f04f1b41b925.png?width=750&format=webp&signature=f7b8c56662760440e316bd06d28bba373d59a67c1dd2a3e8e554a1fa37e91c6f'
             },
             { 
                 name: 'Alternating Dumbbell Curl', 
-                sets: '3 hiệp × 8–15 lần mỗi bên', 
+                sets: '2 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: tay trước',
                 technique: 'Đứng thẳng, lòng bàn tay hướng ra trước và giữ khuỷu sát thân. Cuốn từng quả tạ lên, siết tay trước rồi hạ hết tầm; không đung đưa người',
                 image: 'https://cdn.athlemove.com/39cc852d-fb4c-48ba-8c32-c2d831e206ca.webp?width=750&signature=c2f5a3dd98fa7b3ee22f3c93e8a51c21e8ff7b024fc650faea087cb96a3519bc'
             },
             { 
                 name: 'Hammer Curl', 
-                sets: '3 hiệp × 10–15 lần mỗi bên', 
+                sets: '2 hiệp × 10–15 lần mỗi bên', 
                 notes: 'Tác động: cơ cánh tay, tay trước và cẳng tay',
                 technique: 'Giữ hai lòng bàn tay hướng vào nhau như cầm búa. Cố định khuỷu, cuốn tạ lên rồi hạ chậm; không đưa vai về trước',
                 image: 'https://cdn.athlemove.com/35545596-afdc-462a-bbe9-5a072c6faf3b.webp?width=750&signature=04d8acf63ee5733d7d0c7d225aed7f56164af713f00ce9b0e7157b610a725133'
@@ -119,14 +119,14 @@ const workoutData = {
             },
             { 
                 name: 'Bulgarian Split Squat', 
-                sets: '3 hiệp × 8–12 lần mỗi chân', 
+                sets: '2 hiệp × 8–12 lần mỗi chân', 
                 notes: 'Tác động: đùi trước và mông; cải thiện thăng bằng',
                 technique: 'Đặt mu bàn chân sau lên ghế thấp, chắc chắn và chân trước bước đủ xa. Hạ hông thẳng xuống, giữ gối trước theo hướng mũi chân rồi đạp bằng chân trước để đứng lên',
                 image: 'https://cdn.athlemove.com/24d09e98-7cb4-4977-a28d-d75a9bb59344.webp?width=750&signature=251451a4ff9a09e7471cc8fdb261247c4994ef646a9523d4caf78c77cf973ad9'
             },
             { 
                 name: 'Band Lying Leg Curl', 
-                sets: '3 hiệp × 12–20 lần', 
+                sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: gân kheo',
                 technique: 'Móc dây ở vị trí thấp, chắc chắn và quấn vào cổ chân. Nằm sấp, giữ hông áp xuống sàn, co gối kéo gót chân về gần mông rồi duỗi chân trở lại chậm',
                 image: 'https://gym-animations.com/wp-content/uploads/2026/01/Band-Lying-Leg-Curl-1024x683.png'
@@ -140,14 +140,14 @@ const workoutData = {
             },
             { 
                 name: 'Reverse Crunch', 
-                sets: '3 hiệp × 12–20 lần', 
+                sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: bụng, đặc biệt chức năng cuộn xương chậu',
                 technique: 'Nằm ngửa, co gối và ép lưng dưới xuống sàn. Siết bụng cuộn xương chậu, đưa gối về phía ngực để mông nhấc nhẹ khỏi sàn; không vung chân lấy đà',
                 image: 'https://cdn.athlemove.com/0156cecd-1d35-424a-9478-05023c653534.png?width=1200&format=webp&signature=242d7ad075d7b80aee6efcd819801be16df76c67982f0481d4fa82135b64a0dc'
             },
             { 
                 name: 'Plank', 
-                sets: '3 hiệp × 30–60 giây', 
+                sets: '2 hiệp × 30–60 giây', 
                 notes: 'Tác động: toàn bộ vùng core, mông và vai giữ ổn định',
                 technique: 'Chống khuỷu ngay dưới vai, siết bụng và mông để cơ thể thành một đường thẳng. Không võng lưng hoặc nâng mông quá cao',
                 image: 'https://cdn.athlemove.com/29f44cd6-9165-4c6c-9f1c-3df8561977f2.webp?width=1200&signature=f257815385dc37b5742d1c8308a289ba911f123ee1fda52cc48d68639c9e3ba0'
@@ -167,31 +167,38 @@ const workoutData = {
         exercises: [
             { 
                 name: 'Standing Dumbbell Shoulder Press', 
-                sets: '4 hiệp × 6–12 lần', 
+                sets: '3 hiệp × 6–12 lần', 
                 notes: 'Tác động: vai trước, vai giữa và tay sau. Nghỉ 2-3 phút',
                 technique: 'Đứng vững, siết bụng và mông, giữ tạ ngang vai với khuỷu hơi hướng ra trước. Đẩy tạ lên trên đầu rồi hạ chậm; không ưỡn lưng để lấy đà. Nếu tạ quá nhẹ: thay Pike Push-up 4×6-15',
                 image: 'https://cdn.athlemove.com/3d8573f4-7924-4283-97bc-81b9b8fd2af8.webp?width=1200&signature=cd7bd6f350e290496a80adc7ba5bfbbf8433a16fe0b17622bf7b89af55e04b84'
             },
             { 
-                name: 'Dumbbell Lateral Raise', 
-                sets: '4 hiệp × 12–20 lần', 
+                name: 'Alternating Dumbbell Front Raise',
+                sets: '2 hiệp × 10–15 lần mỗi bên',
+                notes: 'Tác động: vai trước',
+                technique: 'Nâng từng quả tạ ra trước đến ngang vai rồi hạ chậm. Không nâng quá cao hoặc vung người lấy đà.',
+                image: 'https://www.aleanlife.com/wp-content/uploads/2023/02/dumbbell-front-raise.jpg'
+            },
+            { 
+                name: 'One-arm Band Lateral Raise',
+                sets: '2 hiệp × 15–25 lần mỗi bên',
                 notes: 'Tác động: vai giữa',
-                technique: 'Nâng tạ sang hai bên đến gần ngang vai với khuỷu hơi cong. Hạ tạ có kiểm soát; không nhún người hoặc kéo vai lên tai',
-                image: 'https://cdn.athlemove.com/2bcf62c7-2686-4935-ae1c-0eaf3b44a88e.webp?width=1200&signature=9224edd1b14266031eb9b1331880d11b6f1a9761f437c6ff819220b7258cdd8a'
+                technique: 'Giẫm chân lên dây, dùng một tay nâng sang ngang. Giữ dây luôn căng và hạ tay có kiểm soát.',
+                image: 'https://tse1.mm.bing.net/th/id/OIP.OIdhuJrHvh0gGFgBkedtVgHaFX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3'
+            },
+            { 
+                name: 'Wide-grip Band Upright Row',
+                sets: '2 hiệp × 12–20 lần',
+                notes: 'Tác động: vai giữa và cầu vai',
+                technique: 'Đứng lên dây, hai tay cầm rộng hơn vai rồi kéo khuỷu sang hai bên. Chỉ kéo đến khi khuỷu ngang vai; nếu thấy kẹt hoặc đau vai thì dừng bài này.',
+                image: 'https://workoutguru.fit/wp-content/uploads/2023/10/band-upright-row-under-two-feet-video-exercise-guide-tips-1024x576.jpg'
             },
             { 
                 name: 'Band Face Pull', 
-                sets: '3 hiệp × 15–25 lần', 
+                sets: '2 hiệp × 15–25 lần', 
                 notes: 'Tác động: vai sau, cơ xoay ngoài vai và lưng trên',
                 technique: 'Móc dây ngang mặt hoặc cao hơn một chút. Kéo dây về hai bên mặt, mở khuỷu và xoay bàn tay ra sau; siết vai sau, không nhún vai',
                 image: 'https://cdn.athlemove.com/3b8949ce-df11-4ea8-91ba-08d238ea6cfc.png?width=1200&format=webp&signature=9d044bca8f23669309e2a4ff0518d63d73e634cfdd52833d643a2c18532c454f'
-            },
-            { 
-                name: 'Feet-elevated Push-up', 
-                sets: '3 hiệp × 8–20 lần', 
-                notes: 'Tác động: ngực trên và vai trước; phụ vào tay sau',
-                technique: 'Đặt chân lên ghế chắc chắn, hai tay chống sàn và giữ thân người thẳng. Hạ phần ngực trên gần sàn rồi đẩy lên; không để lưng võng',
-                image: 'https://cdn.athlemove.com/44c4f16a-9560-422d-a531-483aceb7094b.png?width=1200&format=webp&signature=b505b325b354ce8aa802803eef4ea5f4b7477205d89b36723ade74269688d2a6'
             },
             { 
                 name: 'Dumbbell Squeeze Floor Press', 
@@ -202,17 +209,10 @@ const workoutData = {
             },
             { 
                 name: 'Dumbbell Overhead Triceps Extension', 
-                sets: '3 hiệp × 10–15 lần', 
+                sets: '2 hiệp × 10–15 lần', 
                 notes: 'Tác động: tay sau, nhấn mạnh đầu dài',
                 technique: 'Giữ một quả tạ bằng hai tay trên đầu, bắp tay gần tai. Gập khuỷu hạ tạ ra sau đầu rồi duỗi tay lên; giữ thân người và bắp tay ổn định',
                 image: 'https://cdn.athlemove.com/0f6b2f14-4dce-4201-8297-952d3c6e510b.webp?width=1200&signature=5466aed9a86efb295038011c40f341afaf3c7365ec4ca0c9397459529b54fc65'
-            },
-            { 
-                name: 'Diamond Push-up', 
-                sets: '2 hiệp × 8–15 lần', 
-                notes: 'Tác động: tay sau; phụ vào ngực và vai trước',
-                technique: 'Đặt hai tay gần nhau dưới ngực, hạ người với khuỷu tương đối sát thân rồi đẩy lên. Nếu đau cổ tay: đổi sang Close-grip Push-up',
-                image: 'https://cdn.athlemove.com/b70f0aa4-b9c1-4bd7-b3cf-2a419ac55d1e.webp?width=1200&signature=6e6575be83f63ab7f45b68b6d16d264165f7bdee1d01cf51f7ebe57bab538c02'
             }
         ]
     },
@@ -244,14 +244,14 @@ const workoutData = {
             },
             { 
                 name: 'Concentration Curl', 
-                sets: '3 hiệp × 8–15 lần mỗi bên', 
+                sets: '2 hiệp × 8–15 lần mỗi bên', 
                 notes: 'Tác động: tay trước',
                 technique: 'Ngồi, tì mặt sau khuỷu vào mặt trong đùi. Cuốn tạ lên, siết tay trước rồi hạ gần thẳng tay; không di chuyển khuỷu',
                 image: 'https://cdn.athlemove.com/44b7bd61-5f68-4796-bfe9-898f2a5f9b7f.webp?width=1200&signature=db59d9a6edf1dd87c3895345a7efb3f4a750beb43638f559b03de8ff5624230e'
             },
             { 
                 name: 'Band Curl', 
-                sets: '3 hiệp × 12–20 lần', 
+                sets: '2 hiệp × 12–20 lần', 
                 notes: 'Tác động: tay trước',
                 technique: 'Đứng lên giữa dây và cầm hai đầu dây. Giữ khuỷu sát thân, cuốn tay lên rồi hạ chậm, luôn duy trì độ căng của dây',
                 image: 'https://cdn.athlemove.com/0f3d8739-454b-4b02-b869-1d4aa23eb976.webp?width=1200&signature=c5c4ce91c142586a3f654f8ee2342b6a02d2b11bd2e1b8c6c5da83aa654ad910'
@@ -272,7 +272,7 @@ const workoutData = {
             },
             { 
                 name: 'Hanging Knee Raise', 
-                sets: '3 hiệp × 8–15 lần', 
+                sets: '2 hiệp × 8–15 lần', 
                 notes: 'Tác động: bụng và cơ gập hông',
                 technique: 'Treo người trên xà, siết bụng kéo gối về phía ngực và cuộn nhẹ xương chậu lên. Hạ chân có kiểm soát; không đung đưa',
                 image: 'https://cdn.athlemove.com/0f59067b-99c9-4bb9-bf0f-d124f3a41512.webp?width=1080&signature=cd01cf393a552a9ec3ce2ecadf5afd3972b8243268c90ee12d9782994db7408b'
@@ -281,14 +281,65 @@ const workoutData = {
     },
     0: {
         name: 'Chủ nhật',
-        focus: 'Nghỉ hoặc tập tự do',
-        isRest: true,
-        exercises: []
+        focus: 'Legs • Calves • Abs',
+        subtitle: 'Chân, bắp chân, bụng',
+        exercises: [
+            {
+                name: 'Goblet Squat',
+                sets: '2 hiệp × 8–15 lần',
+                notes: 'Tác động: đùi trước và mông; phụ vào cơ bụng',
+                technique: 'Ôm một quả tạ sát trước ngực, đẩy gối theo hướng mũi chân và đứng lên bằng toàn bàn chân. Giữ lưng trung lập, không cần tập đến kiệt sức.',
+                image: 'https://cdn.athlemove.com/1fc0b159-960f-49e3-b314-df4529c53f38.png?width=640&format=webp&signature=48950b67ff54475216c8c8a340a47b67f9665e7068eb93425042c8030cc55f1a'
+            },
+            {
+                name: 'Dumbbell Romanian Deadlift',
+                sets: '3 hiệp × 8–15 lần',
+                notes: 'Tác động: gân kheo và mông',
+                technique: 'Đẩy hông ra sau, giữ tạ sát chân và lưng trung lập. Dừng khi gân kheo căng; không cố hạ sâu bằng cách cong lưng.',
+                image: 'https://cdn.athlemove.com/1d8bb4e4-ac0c-485d-8c48-29b035763d45.webp?width=750&signature=fe2ec1cc8367c1c36d179a2d70b2ea89fcca4ce3704a42d7c0a098f44b6e8bc8'
+            },
+            {
+                name: 'Bulgarian Split Squat',
+                sets: '2 hiệp × 8–12 lần mỗi chân',
+                notes: 'Tác động: đùi trước, mông và thăng bằng',
+                technique: 'Hạ hông thẳng xuống, gối trước đi theo hướng mũi chân. Giảm biên độ hoặc dừng nếu đầu gối đau nhói.',
+                image: 'https://cdn.athlemove.com/24d09e98-7cb4-4977-a28d-d75a9bb59344.webp?width=750&signature=251451a4ff9a09e7471cc8fdb261247c4994ef646a9523d4caf78c77cf973ad9'
+            },
+            {
+                name: 'Band Lying Leg Curl',
+                sets: '2 hiệp × 12–20 lần',
+                notes: 'Tác động: gân kheo',
+                technique: 'Nằm sấp, giữ hông áp sàn, co gối kéo gót chân về gần mông rồi hạ có kiểm soát.',
+                image: 'https://gym-animations.com/wp-content/uploads/2026/01/Band-Lying-Leg-Curl-1024x683.png'
+            },
+            {
+                name: 'Single-leg Calf Raise',
+                sets: '3 hiệp × 12–20 lần mỗi chân',
+                notes: 'Tác động: bắp chân',
+                technique: 'Hạ gót có kiểm soát, nhón lên cao hết biên độ và dừng ngắn ở đỉnh. Có thể vịn tay để giữ thăng bằng.',
+                image: 'https://workoutguru.fit/wp-content/uploads/2023/10/dumbbell-standing-single-leg-calf-raise-video-exercise-guide-tips.jpg'
+            },
+            {
+                name: 'Reverse Crunch',
+                sets: '2 hiệp × 12–20 lần',
+                notes: 'Tác động: cơ bụng',
+                technique: 'Ép lưng dưới xuống sàn, cuộn xương chậu nhẹ và hạ chân chậm. Không vung chân để lấy đà.',
+                image: 'https://cdn.athlemove.com/0156cecd-1d35-424a-9478-05023c653534.png?width=1200&format=webp&signature=242d7ad075d7b80aee6efcd819801be16df76c67982f0481d4fa82135b64a0dc'
+            },
+            {
+                name: 'Plank',
+                sets: '2 hiệp × 30–60 giây',
+                notes: 'Tác động: core, mông và vai ổn định',
+                technique: 'Chống khuỷu ngay dưới vai, siết bụng và mông. Dừng khi không còn giữ được lưng trung lập.',
+                image: 'https://cdn.athlemove.com/29f44cd6-9165-4c6c-9f1c-3df8561977f2.webp?width=1200&signature=f257815385dc37b5742d1c8308a289ba911f123ee1fda52cc48d68639c9e3ba0'
+            }
+        ]
     }
 };
 
 // Chỉ tính dữ liệu từ ngày bắt đầu lộ trình tập luyện.
 const PROGRAM_START_DATE = '2025-12-31';
+const SUNDAY_TRAINING_MIGRATION_KEY = 'gymTrackerSundayTrainingV1';
 
 // State management
 let currentWeekOffset = 0;
@@ -302,6 +353,7 @@ let stopwatchHistory = loadStopwatchHistory();
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
+    migrateSundayRestProgress();
     renderWorkouts();
     updateStats();
     setupEventListeners();
@@ -519,12 +571,12 @@ function calculateAllStats() {
     };
     
     const muscleGroupTotal = {
-        Shoulders: 18, // Total exercises for shoulders per week
-        Back: 18,
-        Chest: 13,
-        Arms: 22,
-        Legs: 7,
-        Abs: 4
+        Shoulders: 7,
+        Back: 6,
+        Chest: 4,
+        Arms: 9,
+        Legs: 10,
+        Abs: 5
     };
     
     // Count exercises by muscle group from this week
@@ -533,50 +585,40 @@ function calculateAllStats() {
         const dayKey = date.getDay();
         const workout = workoutData[dayKey];
         
-        if (workoutProgress[dateStr]?.exercises) {
-            const completedExercises = workoutProgress[dateStr].exercises;
-            
-            // Map exercises to muscle groups based on day
+        const dayProgress = workoutProgress[dateStr] || {};
+        // Một ngày đã được xác nhận hoàn thành phải tính đủ toàn bộ bài của ngày đó,
+        // kể cả dữ liệu cũ chưa lưu từng checkbox riêng lẻ.
+        const completedIndexes = dayProgress.completed
+            ? workout.exercises.map((_, index) => index)
+            : Object.keys(dayProgress.exercises || {})
+                .filter(index => dayProgress.exercises[index])
+                .map(Number);
+
+        completedIndexes.forEach(index => {
             if (dayKey === 1) { // T2: Chest, Shoulders, Triceps
-                Object.keys(completedExercises).forEach(idx => {
-                    if (completedExercises[idx]) {
-                        if (idx <= 2) muscleGroupExercises.Chest++;
-                        if (idx === 3) muscleGroupExercises.Shoulders++;
-                        if (idx >= 4) muscleGroupExercises.Arms++;
-                    }
-                });
+                if (index <= 2) muscleGroupExercises.Chest++;
+                else if (index === 3) muscleGroupExercises.Shoulders++;
+                else muscleGroupExercises.Arms++;
             } else if (dayKey === 2) { // T3: Back, Biceps
-                Object.keys(completedExercises).forEach(idx => {
-                    if (completedExercises[idx]) {
-                        if (idx <= 3) muscleGroupExercises.Back++;
-                        else muscleGroupExercises.Arms++;
-                    }
-                });
+                if (index <= 2) muscleGroupExercises.Back++;
+                else if (index === 3) muscleGroupExercises.Shoulders++;
+                else muscleGroupExercises.Arms++;
             } else if (dayKey === 3) { // T4: Legs, Abs
-                Object.keys(completedExercises).forEach(idx => {
-                    if (completedExercises[idx]) {
-                        if (idx <= 4) muscleGroupExercises.Legs++;
-                        else muscleGroupExercises.Abs++;
-                    }
-                });
+                if (index <= 4) muscleGroupExercises.Legs++;
+                else muscleGroupExercises.Abs++;
             } else if (dayKey === 5) { // T6: Shoulders, Chest, Triceps
-                Object.keys(completedExercises).forEach(idx => {
-                    if (completedExercises[idx]) {
-                        if (idx <= 1) muscleGroupExercises.Shoulders++;
-                        if (idx >= 2 && idx <= 4) muscleGroupExercises.Chest++;
-                        if (idx >= 5) muscleGroupExercises.Arms++;
-                    }
-                });
+                if (index <= 4) muscleGroupExercises.Shoulders++;
+                else if (index === 5) muscleGroupExercises.Chest++;
+                else muscleGroupExercises.Arms++;
             } else if (dayKey === 6) { // T7: Back, Arms, Abs
-                Object.keys(completedExercises).forEach(idx => {
-                    if (completedExercises[idx]) {
-                        if (idx <= 2) muscleGroupExercises.Back++;
-                        else if (idx >= 3 && idx <= 6) muscleGroupExercises.Arms++;
-                        else muscleGroupExercises.Abs++;
-                    }
-                });
+                if (index <= 2) muscleGroupExercises.Back++;
+                else if (index <= 6) muscleGroupExercises.Arms++;
+                else muscleGroupExercises.Abs++;
+            } else if (dayKey === 0) { // CN: Legs, Calves, Abs
+                if (index <= 4) muscleGroupExercises.Legs++;
+                else muscleGroupExercises.Abs++;
             }
-        }
+        });
     });
     
     // Calculate percentages
@@ -1039,6 +1081,27 @@ function saveProgress() {
 function loadProgress() {
     const saved = localStorage.getItem('gymTrackerProgress');
     return saved ? JSON.parse(saved) : {};
+}
+
+// Chủ nhật từng là ngày nghỉ. Dữ liệu cũ chỉ được hệ thống tự xác nhận,
+// không có bài tập nào; bỏ xác nhận đó một lần để Chủ nhật trở thành buổi tập thật.
+function migrateSundayRestProgress() {
+    if (localStorage.getItem(SUNDAY_TRAINING_MIGRATION_KEY)) return;
+
+    let changed = false;
+    Object.entries(workoutProgress).forEach(([dateKey, progress]) => {
+        const date = new Date(`${dateKey}T12:00:00`);
+        const hasCompletedExercise = Object.values(progress.exercises || {}).some(Boolean);
+
+        if (date.getDay() === 0 && progress.completed && !hasCompletedExercise) {
+            delete progress.completed;
+            delete progress.exercises;
+            changed = true;
+        }
+    });
+
+    if (changed) saveProgress();
+    localStorage.setItem(SUNDAY_TRAINING_MIGRATION_KEY, '1');
 }
 
 // Export and Import functions
