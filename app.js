@@ -1827,16 +1827,14 @@ function setupBrandReload() {
 }
 
 function setupThemeSettings() {
-    document.querySelectorAll('[data-theme-choice]').forEach(button => {
-        button.addEventListener('click', () => {
-            const choice = button.dataset.themeChoice;
-            localStorage.setItem('gymTrackerTheme', choice);
-            applyTheme(choice);
-            showToast('Đã cập nhật giao diện.', 'success');
-        });
-    });
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (localStorage.getItem('gymTrackerTheme') === 'system') applyTheme('system');
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const nextTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('gymTrackerTheme', nextTheme);
+        applyTheme(nextTheme);
+        showToast('Đã cập nhật giao diện.', 'success');
     });
 }
 
@@ -1847,9 +1845,15 @@ function applySavedTheme() {
 function applyTheme(choice) {
     const isDark = choice === 'dark' || (choice === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     document.body.dataset.theme = isDark ? 'dark' : 'light';
-    document.querySelectorAll('[data-theme-choice]').forEach(button => {
-        button.classList.toggle('active', button.dataset.themeChoice === choice);
-    });
+    const toggle = document.getElementById('themeToggle');
+    const label = document.getElementById('themeSwitcherLabel');
+    const description = document.getElementById('themeSwitcherDescription');
+    if (!toggle) return;
+
+    toggle.classList.toggle('is-light', !isDark);
+    toggle.setAttribute('aria-checked', String(isDark));
+    if (label) label.textContent = isDark ? 'Chế độ tối' : 'Chế độ sáng';
+    if (description) description.textContent = isDark ? 'Dễ nhìn hơn khi tập luyện ban đêm' : 'Sáng rõ hơn khi sử dụng ban ngày';
 }
 
 // Make functions globally accessible
