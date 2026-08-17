@@ -741,7 +741,15 @@ function setupEventListeners() {
         if (event.target.closest('.data-menu-list button')) dataMenu.removeAttribute('open');
     });
     document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && dataMenu?.open) dataMenu.removeAttribute('open');
+        if (event.key !== 'Escape') return;
+
+        const exerciseModal = document.getElementById('exerciseModal');
+        if (exerciseModal?.classList.contains('active')) {
+            closeModal();
+            return;
+        }
+
+        if (dataMenu?.open) dataMenu.removeAttribute('open');
     });
 }
 
