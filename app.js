@@ -340,6 +340,10 @@ const workoutData = {
 // Chỉ tính dữ liệu từ ngày bắt đầu lộ trình tập luyện.
 const PROGRAM_START_DATE = '2025-12-31';
 const SUNDAY_TRAINING_MIGRATION_KEY = 'gymTrackerSundayTrainingV1';
+const APP_LOCKED_SESSION_KEY = 'gymTrackerLockedSession';
+const APP_LOCK_RETURN_KEY = 'gymTrackerLockReturn';
+const WORKER_API_URL = 'https://gymmanagement.trghy.workers.dev';
+const CLOUD_ACCESS_TOKEN_KEY = 'gymTrackerCloudAccessToken';
 
 // State management
 let currentWeekOffset = 0;
@@ -352,6 +356,10 @@ let stopwatchHistory = loadStopwatchHistory();
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem(APP_LOCKED_SESSION_KEY) === '1' || !hasActiveCloudAccessToken()) {
+        redirectToLockScreen();
+        return;
+    }
     applySavedTheme();
     migrateSundayRestProgress();
     renderWorkouts();
@@ -363,8 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setupThemeSettings();
     setupBrandReload();
     setupConfirmDialog();
+    setupAppLock();
     startLiveClock();
     updateStopwatchHistory();
+    void bootstrapCloudSync();
     
     // Check for updates
     if ('serviceWorker' in navigator) {
@@ -801,15 +811,15 @@ function renderWorkouts() {
     calendar.innerHTML = dates.map((date, index) => {
         const workout = workoutData[date.getDay()];
         const dateStr = formatDate(date);
-        const completed = workoutProgress[dateStr]?.completed || false;
+        const completed = isDayConfirmed(date);
         const isToday = formatDate(date) === formatDate(new Date());
         const dayShort = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'][date.getDay()];
-        const state = workout.isRest ? 'rest' : completed ? 'completed' : '';
+        const state = completed ? 'completed' : workout.isRest ? 'rest' : '';
         return `
             <button class="calendar-day ${activeDayIndex === index ? 'active' : ''} ${isToday ? 'today' : ''} ${state}" onclick="selectWorkoutDay(${index})" aria-pressed="${activeDayIndex === index}">
                 <span class="calendar-day-name">${dayShort}</span>
                 <strong>${date.getDate()}</strong>
-                <span class="calendar-day-status">${workout.isRest ? workout.focus : completed ? 'Hoàn thành' : isToday ? 'Hôm nay' : workout.focus}</span>
+                <span class="calendar-day-status">${workout.isRest && completed ? 'Nghỉ theo lịch' : workout.isRest ? workout.focus : completed ? 'Hoàn thành' : isToday ? 'Hôm nay' : workout.focus}</span>
             </button>
         `;
     }).join('');
@@ -817,7 +827,7 @@ function renderWorkouts() {
     const date = dates[activeDayIndex] || dates[0];
     const workout = workoutData[date.getDay()];
     const dateStr = formatDate(date);
-    const isCompleted = workoutProgress[dateStr]?.completed || false;
+    const isCompleted = isDayConfirmed(date);
     container.innerHTML = '';
     container.appendChild(createWorkoutCard(workout, date, dateStr, isCompleted));
     
@@ -900,7 +910,7 @@ function toggleDayComplete(dateStr) {
         workoutProgress[dateStr] = { completed: false, exercises: {} };
     }
     workoutProgress[dateStr].completed = !workoutProgress[dateStr].completed;
-    saveProgress();
+    saveProgress(dateStr);
     renderWorkouts();
 }
 
@@ -912,7 +922,7 @@ function toggleExerciseComplete(dateStr, exerciseIdx) {
         workoutProgress[dateStr].exercises = {};
     }
     workoutProgress[dateStr].exercises[exerciseIdx] = !workoutProgress[dateStr].exercises[exerciseIdx];
-    saveProgress();
+    saveProgress(dateStr);
     renderWorkouts();
 }
 
@@ -935,7 +945,7 @@ function toggleAllExercises(dateStr, checkAll) {
         workoutProgress[dateStr].exercises[idx] = checkAll;
     });
     
-    saveProgress();
+    saveProgress(dateStr);
     renderWorkouts();
 }
 
@@ -1005,7 +1015,7 @@ function saveExerciseNotes(dateStr, exerciseIdx) {
     }
     
     workoutProgress[dateStr].notes[exerciseIdx] = notes;
-    saveProgress();
+    saveProgress(dateStr);
     
     // Show feedback
     const btn = event.target;
@@ -1047,7 +1057,9 @@ function isAutoConfirmedRestDay(date) {
     comparedDate.setHours(0, 0, 0, 0);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return comparedDate <= today;
+    // Ngày nghỉ chỉ được hệ thống xác nhận sau khi ngày đó đã kết thúc:
+    // lúc 00:00 của ngày hôm sau. Vì vậy Thứ 5 đang diễn ra chưa sáng/tích.
+    return comparedDate < today;
 }
 
 function isDayConfirmed(date) {
@@ -1074,13 +1086,178 @@ function calculateStreak() {
     return streak;
 }
 
-function saveProgress() {
+function saveProgress(dateStr = null) {
     localStorage.setItem('gymTrackerProgress', JSON.stringify(workoutProgress));
+    if (dateStr) void syncWorkoutDay(dateStr);
 }
 
 function loadProgress() {
     const saved = localStorage.getItem('gymTrackerProgress');
     return saved ? JSON.parse(saved) : {};
+}
+
+function getCloudAccessToken() {
+    return sessionStorage.getItem(CLOUD_ACCESS_TOKEN_KEY);
+}
+
+function hasActiveCloudAccessToken() {
+    const token = getCloudAccessToken();
+    const payload = token?.split('.')[0];
+    if (!payload) return false;
+
+    try {
+        const base64 = payload.replace(/-/g, '+').replace(/_/g, '/');
+        const padded = base64 + '='.repeat((4 - base64.length % 4) % 4);
+        const data = JSON.parse(decodeURIComponent(Array.from(atob(padded), byte =>
+            `%${byte.charCodeAt(0).toString(16).padStart(2, '0')}`
+        ).join('')));
+        return data.scope === 'sync' && Number.isFinite(data.exp) && data.exp > Date.now();
+    } catch {
+        return false;
+    }
+}
+
+function redirectToLockScreen() {
+    sessionStorage.removeItem(CLOUD_ACCESS_TOKEN_KEY);
+    sessionStorage.setItem(
+        APP_LOCK_RETURN_KEY,
+        `${window.location.pathname}${window.location.search}${window.location.hash}`
+    );
+    window.location.replace('lock.html');
+}
+
+async function cloudRequest(path, options = {}) {
+    const token = getCloudAccessToken();
+    if (!token) throw new Error('Chưa kết nối dữ liệu đám mây.');
+
+    const response = await fetch(`${WORKER_API_URL}${path}`, {
+        ...options,
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+            ...(options.headers || {})
+        }
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.ok === false) {
+        if (response.status === 401) {
+            redirectToLockScreen();
+        }
+        throw new Error(result.detail || result.message || 'Không thể đồng bộ dữ liệu.');
+    }
+    return result;
+}
+
+function buildWorkoutDayRow(dateStr) {
+    const date = new Date(`${dateStr}T12:00:00`);
+    const workout = workoutData[date.getDay()];
+    const progress = workoutProgress[dateStr] || {};
+    const completedCount = Object.values(progress.exercises || {}).filter(Boolean).length;
+    const weekdayNames = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+
+    return {
+        workout_date: dateStr,
+        weekday_name: weekdayNames[date.getDay()],
+        workout_plan: workout?.focus || 'Chưa có lịch',
+        status: workout ? getWorkoutStatus(date, workout) : 'Chưa đến lịch',
+        completed_count: completedCount,
+        total_exercises: workout?.exercises?.length || 0,
+        workout_minutes: getWorkoutMinutesForDate(date),
+        exercise_state: progress.exercises || {},
+        exercise_notes: progress.notes || {},
+        completed_at: progress.completed ? new Date().toISOString() : null
+    };
+}
+
+async function syncWorkoutDay(dateStr) {
+    if (!getCloudAccessToken() || !workoutProgress[dateStr]) return;
+    try {
+        await cloudRequest('/data/workout-day', {
+            method: 'PUT',
+            body: JSON.stringify({ row: buildWorkoutDayRow(dateStr) })
+        });
+    } catch {}
+}
+
+function toCloudSession(session) {
+    return {
+        client_id: String(session.id),
+        started_at: new Date(session.date).toISOString(),
+        duration_seconds: Math.round(session.duration / 1000)
+    };
+}
+
+async function syncStopwatchSession(session) {
+    if (!getCloudAccessToken()) return;
+    try {
+        await cloudRequest('/data/stopwatch-session', {
+            method: 'PUT',
+            body: JSON.stringify({ session: toCloudSession(session) })
+        });
+    } catch {}
+}
+
+async function syncAllCloudData() {
+    if (!getCloudAccessToken()) return;
+    const startDate = new Date(`${PROGRAM_START_DATE}T12:00:00`);
+    const today = new Date();
+    today.setHours(12, 0, 0, 0);
+    const rows = [];
+
+    for (const date = new Date(startDate); date <= today; date.setDate(date.getDate() + 1)) {
+        rows.push(buildWorkoutDayRow(formatDate(date)));
+    }
+
+    await cloudRequest('/data/workout-days', {
+        method: 'PUT',
+        body: JSON.stringify({ rows })
+    });
+    await Promise.all(stopwatchHistory.map(syncStopwatchSession));
+}
+
+function applyCloudData(cloud) {
+    workoutProgress = (cloud.workoutDays || []).reduce((all, row) => {
+        all[row.workout_date] = {
+            completed: row.status === 'Hoàn thành',
+            exercises: row.exercise_state || {},
+            notes: row.exercise_notes || {}
+        };
+        return all;
+    }, {});
+
+    stopwatchHistory = (cloud.sessions || []).map(session => {
+        const date = new Date(session.started_at);
+        const numericId = Number(session.client_id);
+        return {
+            id: Number.isSafeInteger(numericId) ? numericId : session.client_id,
+            duration: session.duration_seconds * 1000,
+            date: date.toISOString(),
+            dateDisplay: date.toLocaleString('vi-VN')
+        };
+    });
+    saveProgress();
+    saveStopwatchHistory();
+    renderWorkouts();
+    updateStats();
+    updateStopwatchHistory();
+}
+
+async function bootstrapCloudSync() {
+    if (!getCloudAccessToken()) {
+        return;
+    }
+
+    try {
+        const cloud = await cloudRequest('/data/bootstrap');
+        const hasCloudData = cloud.workoutDays?.length || cloud.sessions?.length;
+    if (hasCloudData) {
+      applyCloudData(cloud);
+    }
+
+    // Đồng bộ toàn bộ các ngày từ mốc bắt đầu đến hôm nay. Nhờ vậy những ngày
+    // đã qua nhưng chưa tập cũng được lưu là "Bỏ tập", giống báo cáo Excel.
+    await syncAllCloudData();
+    } catch {}
 }
 
 // Chủ nhật từng là ngày nghỉ. Dữ liệu cũ chỉ được hệ thống tự xác nhận,
@@ -1143,6 +1320,7 @@ function importData() {
                 saveStopwatchHistory();
                 renderWorkouts();
                 updateStopwatchHistory();
+                void syncAllCloudData();
                 showToast('Đã nhập dữ liệu thành công.', 'success');
             } catch (error) {
                 showToast('File JSON không hợp lệ.', 'error');
@@ -1156,17 +1334,29 @@ function importData() {
 function clearAllData() {
     showConfirm({
         title: 'Xóa toàn bộ dữ liệu?',
-        message: 'Data sẽ mất hết.',
+        message: 'Data sẽ mất hết. Nhập mật khẩu để xác nhận.',
         confirmLabel: 'Xóa dữ liệu',
         danger: true,
-        onConfirm: () => {
+        passwordAction: 'delete',
+        onConfirm: async password => {
+        if (getCloudAccessToken()) {
+            try {
+                await cloudRequest('/data/all', {
+                    method: 'DELETE',
+                    body: JSON.stringify({ password })
+                });
+            } catch (error) {
+                showToast(error.message || 'Chưa thể xóa dữ liệu đám mây. Dữ liệu trên máy vẫn được giữ nguyên.', 'error');
+                return;
+            }
+        }
         workoutProgress = {};
         stopwatchHistory = [];
         saveProgress();
         saveStopwatchHistory();
         renderWorkouts();
         updateStopwatchHistory();
-        showToast('Đã xóa dữ liệu trên thiết bị này.', 'success');
+        showToast('Đã xóa dữ liệu.', 'success');
         }
     });
 }
@@ -1311,6 +1501,7 @@ function startLiveClock() {
             currentWeekOffset = 0;
             activeDayIndex = (now.getDay() + 6) % 7;
             renderWorkouts();
+            void syncAllCloudData();
         }
     }
     
@@ -1391,6 +1582,7 @@ function saveWorkoutTime() {
     
     stopwatchHistory.unshift(session);
     saveStopwatchHistory();
+    void syncStopwatchSession(session);
     updateStopwatchHistory();
     
     resetStopwatch();
@@ -1492,9 +1684,14 @@ function deleteHistoryItem(id) {
         confirmLabel: 'Xóa phiên',
         danger: true,
         onConfirm: () => {
-        stopwatchHistory = stopwatchHistory.filter(s => s.id !== id);
+        const removedSession = stopwatchHistory.find(s => String(s.id) === String(id));
+        stopwatchHistory = stopwatchHistory.filter(s => String(s.id) !== String(id));
         saveStopwatchHistory();
         updateStopwatchHistory();
+        if (removedSession && getCloudAccessToken()) {
+            cloudRequest(`/data/stopwatch-session/${encodeURIComponent(removedSession.id)}`, { method: 'DELETE' })
+                .catch(() => {});
+        }
         showToast('Đã xóa phiên tập.', 'success');
         }
     });
@@ -1512,23 +1709,114 @@ function showToast(message, type = 'success') {
 function setupConfirmDialog() {
     const dialog = document.getElementById('confirmDialog');
     const cancel = document.getElementById('confirmCancel');
-    cancel.addEventListener('click', () => { dialog.hidden = true; });
+    cancel.addEventListener('click', () => {
+        dialog.hidden = true;
+        document.getElementById('confirmFields').replaceChildren();
+    });
 }
 
-function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = false, onConfirm }) {
+function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = false, passwordAction = null, onConfirm }) {
     const dialog = document.getElementById('confirmDialog');
     const accept = document.getElementById('confirmAccept');
+    const fields = document.getElementById('confirmFields');
     document.getElementById('confirmTitle').textContent = title;
     document.getElementById('confirmMessage').textContent = message;
     accept.textContent = confirmLabel;
     accept.classList.toggle('danger-btn', danger);
     accept.classList.toggle('primary-btn', !danger);
-    accept.onclick = () => {
-        dialog.hidden = true;
-        onConfirm();
+    fields.replaceChildren();
+
+    let passwordInput = null;
+    let passwordError = null;
+
+    if (passwordAction) {
+        passwordInput = document.createElement('input');
+        passwordInput.className = 'password-input';
+        passwordInput.type = 'password';
+        passwordInput.autocomplete = 'current-password';
+        passwordInput.placeholder = 'Nhập mật khẩu';
+        passwordInput.setAttribute('aria-label', 'Mật khẩu');
+        fields.appendChild(passwordInput);
+
+        passwordError = document.createElement('p');
+        passwordError.className = 'password-error';
+        passwordError.setAttribute('aria-live', 'polite');
+        fields.appendChild(passwordError);
+    }
+
+    accept.onclick = async () => {
+        const password = passwordInput?.value || '';
+
+        if (passwordAction && !(await verifyWorkerPassword(passwordAction, password))) {
+            passwordError.textContent = 'Mật khẩu không đúng hoặc không kết nối được Cloudflare.';
+            passwordInput.select();
+            return;
+        }
+
+        accept.disabled = true;
+        try {
+            await onConfirm(password);
+            dialog.hidden = true;
+            fields.replaceChildren();
+        } finally {
+            accept.disabled = false;
+        }
     };
     dialog.hidden = false;
-    accept.focus();
+    (passwordInput || accept).focus();
+}
+
+async function verifyWorkerPassword(action, password) {
+    if (!password) return false;
+    try {
+        const response = await fetch(`${WORKER_API_URL}/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action, password })
+        });
+        const result = await response.json();
+        if (response.ok && result.ok === true && action === 'unlock' && result.token) {
+            sessionStorage.setItem(CLOUD_ACCESS_TOKEN_KEY, result.token);
+        }
+        return response.ok && result.ok === true;
+    } catch {
+        return false;
+    }
+}
+
+function requestAppLock() {
+    showConfirm({
+        title: 'Khóa trang?',
+        message: 'Nhập mật khẩu khóa trang đã lưu trên Cloudflare.',
+        confirmLabel: 'Khóa trang',
+        passwordAction: 'lock',
+        onConfirm: () => {
+            lockApplication();
+            showToast('Trang đã được khóa.', 'success');
+        }
+    });
+}
+
+function lockApplication() {
+    sessionStorage.setItem(APP_LOCKED_SESSION_KEY, '1');
+    redirectToLockScreen();
+}
+
+function updateAppLockSettings() {
+    const button = document.getElementById('lockSettingsButton');
+    const status = document.getElementById('lockSettingsStatus');
+    const description = document.getElementById('lockSettingsDescription');
+    if (!button || !status || !description) return;
+
+    button.textContent = 'Khóa trang';
+    status.textContent = 'Cloudflare bảo vệ';
+    status.classList.remove('muted');
+    description.textContent = 'Trang và thao tác xóa dữ liệu sẽ yêu cầu mật khẩu trên Cloudflare.';
+}
+
+function setupAppLock() {
+    updateAppLockSettings();
+    localStorage.removeItem('gymTrackerPasscodeV1');
 }
 
 function setupBrandReload() {
@@ -1573,6 +1861,7 @@ window.saveExerciseNotes = saveExerciseNotes;
 window.exportData = exportData;
 window.importData = importData;
 window.clearAllData = clearAllData;
+window.requestAppLock = requestAppLock;
 window.startStopwatch = startStopwatch;
 window.pauseStopwatch = pauseStopwatch;
 window.resetStopwatch = resetStopwatch;

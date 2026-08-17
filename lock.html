@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#07101e">
+    <title>Gym Tracker — Trang đã khóa</title>
+    <link rel="icon" href="images/favicon/favicon.png">
+    <style>
+        :root { color-scheme: dark; }
+        * { box-sizing: border-box; }
+        body { background: #07101e; color: #f7f8f4; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; min-height: 100vh; }
+        .lock-page { align-items: center; background: linear-gradient(rgba(3, 8, 17, .83), rgba(3, 8, 17, .94)), url('images/backgruod/backgroud.png') center / cover; cursor: pointer; display: flex; inset: 0; justify-content: center; overflow: hidden; position: fixed; }
+        .lock-page::before { background: radial-gradient(circle at 50% 50%, rgba(203, 255, 77, .08), transparent 38%); content: ''; inset: 0; pointer-events: none; position: absolute; }
+        .lock-message { position: relative; text-align: center; user-select: none; }
+        .lock-message h1 { font-size: clamp(25px, 4vw, 46px); font-weight: 800; letter-spacing: -.055em; margin: 0; }
+        .unlock-card { background: rgba(20, 32, 54, .95); border: 1px solid rgba(140, 160, 191, .34); border-radius: 18px; box-shadow: 0 22px 80px rgba(0, 0, 0, .48); cursor: default; left: 50%; max-width: 380px; padding: 25px; position: fixed; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 40px); z-index: 2; }
+        .unlock-card[hidden] { display: none; }
+        .unlock-card h2 { font-size: 22px; letter-spacing: -.04em; margin: 0; }
+        .unlock-card p { color: #aeb9ca; font-size: 13px; line-height: 1.5; margin: 7px 0 18px; }
+        label { color: #cbd4e0; display: block; font-size: 12px; font-weight: 800; margin-bottom: 7px; }
+        input { background: rgba(3, 7, 14, .45); border: 1px solid #53637d; border-radius: 9px; color: #f7f8f4; font: inherit; min-height: 44px; outline: none; padding: 0 12px; width: 100%; }
+        input:focus { border-color: #cbff4d; box-shadow: 0 0 0 3px rgba(203, 255, 77, .2); }
+        .actions { display: flex; gap: 9px; justify-content: flex-end; margin-top: 17px; }
+        button { border-radius: 9px; cursor: pointer; font: inherit; font-size: 13px; font-weight: 800; min-height: 42px; padding: 0 14px; }
+        .cancel { background: transparent; border: 1px solid #53637d; color: #cbd4e0; }
+        .unlock { background: #cbff4d; border: 1px solid #cbff4d; color: #142000; }
+        .error { color: #ff667a !important; min-height: 18px; margin: 10px 0 0 !important; }
+        @media (max-width: 620px) {
+            .lock-page { padding: 20px; }
+            .lock-message h1 { font-size: 30px; max-width: 290px; }
+            .unlock-card { border-radius: 16px; bottom: 0; left: 0; max-width: none; padding: 22px 20px calc(22px + env(safe-area-inset-bottom)); top: auto; transform: none; width: 100%; }
+            .unlock-card h2 { font-size: 23px; }
+            input { font-size: 16px; min-height: 48px; }
+            .actions { display: grid; grid-template-columns: 1fr 1.2fr; }
+            button { min-height: 46px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="lock-page" id="lockPage">
+        <div class="lock-message" aria-live="polite"><h1>Trang đã bị khóa</h1></div>
+        <section class="unlock-card" id="unlockCard" aria-labelledby="unlockTitle" hidden>
+            <h2 id="unlockTitle">Mở khóa trang</h2>
+            <p>Nhập mật khẩu khóa trang để tiếp tục.</p>
+            <label for="password">Mật khẩu</label>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu">
+            <div class="actions"><button class="cancel" id="cancelButton" type="button">Hủy</button><button class="unlock" id="unlockButton" type="button">Mở khóa</button></div>
+            <p class="error" id="errorMessage" aria-live="polite"></p>
+        </section>
+    </main>
+    <script>
+        const WORKER_API_URL = 'https://gymmanagement.trghy.workers.dev';
+        const LOCKED_KEY = 'gymTrackerLockedSession';
+        const RETURN_KEY = 'gymTrackerLockReturn';
+        const CLOUD_ACCESS_TOKEN_KEY = 'gymTrackerCloudAccessToken';
+        const page = document.getElementById('lockPage');
+        const card = document.getElementById('unlockCard');
+        const password = document.getElementById('password');
+        const errorMessage = document.getElementById('errorMessage');
+
+        function showUnlockCard() {
+            card.hidden = false;
+            errorMessage.textContent = '';
+            window.setTimeout(() => password.focus(), 0);
+        }
+
+        function hideUnlockCard() {
+            card.hidden = true;
+            password.value = '';
+            errorMessage.textContent = '';
+        }
+
+        page.addEventListener('click', event => {
+            if (!card.hidden || event.target.closest('.unlock-card')) return;
+            showUnlockCard();
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', hideUnlockCard);
+
+        async function unlock() {
+            try {
+                const response = await fetch(`${WORKER_API_URL}/verify`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'unlock', password: password.value })
+                });
+                const result = await response.json();
+                if (!response.ok || !result.ok) throw new Error('invalid');
+
+                if (result.token) sessionStorage.setItem(CLOUD_ACCESS_TOKEN_KEY, result.token);
+
+                const returnPath = sessionStorage.getItem(RETURN_KEY) || 'index.html';
+                sessionStorage.removeItem(LOCKED_KEY);
+                sessionStorage.removeItem(RETURN_KEY);
+                window.location.replace(returnPath.includes('lock.html') ? 'index.html' : returnPath);
+            } catch {
+                errorMessage.textContent = 'Mật khẩu không đúng hoặc không kết nối được Cloudflare.';
+                password.select();
+            }
+        }
+
+        document.getElementById('unlockButton').addEventListener('click', unlock);
+        password.addEventListener('keydown', event => {
+            if (event.key === 'Enter') unlock();
+        });
+    </script>
+</body>
+</html>

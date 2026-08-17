@@ -95,6 +95,7 @@ img { max-width: 100%; }
 .calendar-day.today .calendar-day-name::after { color: var(--primary); content: ' • Hôm nay'; font-size: 10px; }
 .calendar-day.completed { border-color: rgba(73, 217, 157, .56); }
 .calendar-day.rest { opacity: .78; }
+.calendar-day.rest.completed { opacity: 1; }
 .calendar-day-name { color: var(--muted); font-size: 12px; font-weight: 800; }
 .calendar-day strong { font-size: 28px; letter-spacing: -.05em; line-height: 1; }
 .calendar-day-status { color: var(--primary); font-size: 11px; font-weight: 700; line-height: 1.35; }
@@ -102,6 +103,7 @@ img { max-width: 100%; }
 
 .workout-container { display: block; }
 .workout-container .workout-card { margin: 0 auto; max-width: 980px; }
+.workout-card.rest.completed { background: linear-gradient(135deg, rgba(73, 217, 157, .11), var(--surface)); border-color: rgba(73, 217, 157, .45); }
 .workout-card { padding: 26px; }
 .day-info h3 { font-size: 23px; }
 .day-info .day-name, .day-info .subtitle { font-size: 13px; }
@@ -197,9 +199,30 @@ img { max-width: 100%; }
 .confirm-card { background: #142036; border: 1px solid var(--line-strong); border-radius: var(--radius); box-shadow: var(--shadow); max-width: 430px; padding: 24px; width: 100%; }
 .confirm-card h2 { font-size: 21px; }
 .confirm-card p { color: #c5cbd4; font-size: 14px; margin-top: 8px; }
+.confirm-fields { display: grid; gap: 10px; margin-top: 18px; }
+.password-label { color: var(--muted-light); display: block; font-size: 12px; font-weight: 800; }
+.password-input { background: rgba(3, 7, 14, .45); border: 1px solid var(--line-strong); border-radius: 9px; color: var(--ink); font: inherit; min-height: 43px; outline: none; padding: 0 12px; width: 100%; }
+.password-input:focus { border-color: var(--primary); }
 .confirm-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 22px; }
 .danger-btn { background: var(--danger); border: 1px solid var(--danger); border-radius: 8px; color: #fff; font-weight: 800; }
 .primary-btn { background: var(--primary); border: 1px solid var(--primary); border-radius: 8px; color: var(--primary-ink); font-weight: 800; }
+.lock-settings { align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); display: flex; gap: 16px; margin-top: 14px; max-width: 840px; padding: 21px; }
+.lock-settings-copy { flex: 1; }
+.lock-settings h3 { font-size: 16px; font-weight: 800; letter-spacing: -.03em; margin-top: 3px; }
+.lock-settings p { color: var(--muted); font-size: 12px; margin-top: 5px; }
+.lock-settings .status-pill { margin-top: 12px; }
+.lock-settings-button { min-height: 42px; padding: 9px 13px; white-space: nowrap; }
+.app-lock-screen { align-items: center; backdrop-filter: blur(16px); background: rgba(3, 7, 14, .94); display: flex; inset: 0; justify-content: center; padding: 20px; position: fixed; z-index: 1000; }
+.app-lock-screen[hidden] { display: none; }
+.app-lock-card { background: #142036; border: 1px solid var(--line-strong); border-radius: 18px; box-shadow: var(--shadow); max-width: 390px; padding: 30px; text-align: center; width: 100%; }
+.app-lock-icon { align-items: center; background: var(--primary); border-radius: 12px; color: var(--primary-ink); display: inline-flex; font-size: 22px; height: 46px; justify-content: center; margin-bottom: 18px; width: 46px; }
+.app-lock-card h2 { font-size: 25px; margin-top: 6px; }
+.app-lock-card > p { color: var(--muted-light); font-size: 13px; line-height: 1.55; margin: 8px auto 18px; max-width: 290px; }
+.app-lock-card .password-label { text-align: left; }
+.app-lock-card .password-input { margin-top: 7px; }
+.unlock-button { margin-top: 12px; min-height: 43px; width: 100%; }
+.password-error { color: var(--danger) !important; min-height: 18px; margin: 9px 0 0 !important; }
+@media(max-width:620px){.lock-settings{align-items:flex-start;flex-wrap:wrap}.lock-settings-button{width:100%}}
 
 @media (max-width: 1320px) {
     .stats-grid-five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -234,6 +257,135 @@ img { max-width: 100%; }
     .theme-options { grid-template-columns: 1fr; }
     .toast-region { bottom: 15px; left: 15px; right: 15px; }
     .toast { max-width: none; }
+}
+
+/* Bố cục cảm ứng: chỉ áp dụng cho điện thoại, giữ nguyên giao diện máy tính. */
+@media (max-width: 620px) {
+    html { background: var(--canvas); }
+    body { min-width: 320px; overscroll-behavior-y: none; }
+
+    .mobile-menu-toggle {
+        align-items: center;
+        background: rgba(20, 32, 54, .96);
+        border: 1px solid var(--line-strong);
+        border-radius: 12px;
+        height: 44px;
+        justify-content: center;
+        left: 12px;
+        top: 12px;
+        width: 44px;
+    }
+    .sidebar { padding-bottom: calc(18px + env(safe-area-inset-bottom)); width: min(86vw, 320px); }
+    .sidebar-close { height: 42px; width: 42px; }
+
+    .header-container {
+        align-items: center;
+        min-height: 70px;
+        padding: 12px 14px 12px 68px;
+    }
+    .header-left { min-width: 0; }
+    .header-left .eyebrow { font-size: 9px; }
+    .page-title { font-size: 25px; line-height: 1.05; }
+    .header-utility { flex: 0 0 auto; }
+    .data-menu summary { border-radius: 12px; height: 44px; width: 44px; }
+    .data-menu-list { position: fixed; right: 14px; top: 66px; width: min(220px, calc(100vw - 28px)); }
+    .data-menu-list button { font-size: 14px; min-height: 44px; padding: 11px 12px; }
+
+    .main-content { padding: 18px 14px 28px; }
+    .workout-toolbar { margin: 2px 0 16px; }
+    .workout-toolbar h2, .page-hero h2 { font-size: 24px; line-height: 1.15; }
+    .page-hero { margin: 2px 0 20px; }
+
+    .week-calendar {
+        display: flex;
+        gap: 10px;
+        margin-left: -14px;
+        margin-right: -14px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding: 2px 14px 12px;
+        scroll-padding-left: 14px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+    .week-calendar::-webkit-scrollbar { display: none; }
+    .calendar-day {
+        flex: 0 0 136px;
+        min-height: 108px;
+        padding: 13px;
+        scroll-snap-align: start;
+    }
+    .calendar-day strong { font-size: 27px; }
+    .calendar-day-status { font-size: 10px; }
+
+    .workout-container .workout-card { border-radius: 15px; }
+    .workout-card { padding: 18px 15px; }
+    .workout-header { gap: 12px; margin-bottom: 13px; padding-bottom: 13px; }
+    .day-info h3 { font-size: 21px; }
+    .header-actions-card { align-items: flex-end; gap: 8px; }
+    .quick-action-btn { min-height: 40px; padding: 8px 10px; }
+    .complete-checkbox { height: 22px; width: 22px; }
+    .exercise-list { gap: 8px; }
+    .exercise-item {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: minmax(0, 1fr) minmax(70px, auto) 18px;
+        min-height: 61px;
+        padding: 10px 11px 10px 13px;
+    }
+    .exercise-name { font-size: 13px; line-height: 1.3; min-width: 0; }
+    .exercise-sets { font-size: 10px; line-height: 1.35; max-width: 88px; white-space: normal; }
+    .exercise-checkbox { height: 18px; width: 18px; }
+
+    .week-footer-nav { gap: 7px; margin-top: 20px; width: 100%; }
+    .week-footer-nav .nav-btn { flex: 1; font-size: 11px; justify-content: center; min-height: 44px; padding: 0 7px; }
+    .week-display { font-size: 11px; min-width: 78px; }
+
+    .stats-grid-five { gap: 10px; }
+    .stat-card { min-height: 136px; padding: 16px; }
+    .stat-number { font-size: 29px; }
+    .stat-label-large { font-size: 11px; }
+    .stats-section { border-radius: 15px; padding: 16px; }
+    .weekly-chart { height: 172px; padding-left: 0; padding-right: 0; }
+    .monthly-chart-heading { align-items: flex-start; gap: 12px; }
+    .month-range-control { flex-shrink: 0; }
+    .month-range-control select { min-height: 40px; padding: 8px 25px 8px 9px; }
+    .monthly-chart-note { font-size: 11px; line-height: 1.45; }
+
+    .report-export { border-radius: 15px; gap: 15px; padding: 17px; }
+    .report-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+    .report-actions .secondary-btn { min-height: 44px; padding: 8px 6px; }
+
+    .stopwatch-main, .workout-history { border-radius: 15px; padding: 20px 15px; }
+    .time-display { font-size: clamp(42px, 14vw, 58px); }
+    .stopwatch-controls { gap: 9px; margin: 24px 0 18px; }
+    .stopwatch-btn { min-height: 46px; }
+    .history-filter { display: grid; grid-template-columns: 1fr 1fr; }
+    .filter-btn { min-height: 40px; }
+    .history-item { align-items: flex-start; gap: 8px; padding: 12px; }
+
+    .theme-settings, .lock-settings { border-radius: 15px; padding: 17px; }
+    .theme-option { min-height: 76px; }
+    .lock-settings { gap: 12px; }
+
+    .modal { align-items: flex-end; padding: 0; }
+    .modal-content { border-bottom-left-radius: 0; border-bottom-right-radius: 0; max-height: 88dvh; width: 100%; }
+    .modal-header { padding: 16px; position: sticky; top: 0; z-index: 1; }
+    .modal-body { padding: 16px; }
+    .exercise-image { min-height: 155px; }
+    .confirm-dialog { align-items: flex-end; padding: 12px; }
+    .confirm-card { border-radius: 16px; max-width: none; padding: 20px; }
+    .confirm-actions { display: grid; grid-template-columns: 1fr 1fr; }
+    .confirm-actions .secondary-btn, .confirm-actions .danger-btn { min-height: 45px; }
+    .toast-region { bottom: calc(14px + env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 380px) {
+    .page-title { font-size: 23px; }
+    .calendar-day { flex-basis: 126px; }
+    .week-display { min-width: 62px; }
+    .week-footer-nav .nav-btn { font-size: 10px; }
+    .exercise-item { grid-template-columns: minmax(0, 1fr) 74px 18px; }
 }
 
 /* Ngày nghỉ được hệ thống xác nhận sẵn, vẫn hiển thị dấu tick rõ ràng. */
