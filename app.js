@@ -403,8 +403,8 @@ function activatePage(pageName, updateUrl = false) {
     const pageMeta = {
         workout: { eyebrow: 'Kế hoạch tuần', title: 'Lịch tập luyện', subtitle: '' },
         stats: { eyebrow: 'Nhìn lại hành trình', title: 'Tiến độ tập luyện', subtitle: '' },
-        exercises: { eyebrow: 'Theo dõi thời lượng', title: 'Bấm giờ tập luyện', subtitle: 'Theo dõi thời lượng cho từng buổi tập.' },
-        settings: { eyebrow: 'Không gian của bạn', title: 'Cài đặt & dữ liệu', subtitle: 'Quản lý dữ liệu tập luyện của bạn.' }
+        exercises: { eyebrow: 'Theo dõi thời lượng', title: 'Bấm giờ tập luyện', subtitle: '' },
+        settings: { eyebrow: 'Không gian của bạn', title: 'Cài đặt & dữ liệu', subtitle: '' }
     };
     const meta = pageMeta[pageName];
     pageTitle.textContent = meta.title;
@@ -1688,9 +1688,11 @@ function filterHistory(filter) {
 function deleteHistoryItem(id) {
     showConfirm({
         title: 'Xóa phiên tập?',
-        message: 'Phiên tập này sẽ bị xóa khỏi lịch sử trên thiết bị.',
+        message: 'Thời gian buổi tập này sẽ bị xoá',
         confirmLabel: 'Xóa phiên',
         danger: true,
+        passwordAction: 'delete',
+        submitOnEnter: true,
         onConfirm: () => {
         const removedSession = stopwatchHistory.find(s => String(s.id) === String(id));
         stopwatchHistory = stopwatchHistory.filter(s => String(s.id) !== String(id));
@@ -1723,7 +1725,7 @@ function setupConfirmDialog() {
     });
 }
 
-function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = false, passwordAction = null, onConfirm }) {
+function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = false, passwordAction = null, submitOnEnter = false, onConfirm }) {
     const dialog = document.getElementById('confirmDialog');
     const accept = document.getElementById('confirmAccept');
     const fields = document.getElementById('confirmFields');
@@ -1756,7 +1758,7 @@ function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = fa
         const password = passwordInput?.value || '';
 
         if (passwordAction && !(await verifyWorkerPassword(passwordAction, password))) {
-            passwordError.textContent = 'Mật khẩu không đúng hoặc không kết nối được Cloudflare.';
+            passwordError.textContent = 'Mật khẩu không đúng';
             passwordInput.select();
             return;
         }
@@ -1770,6 +1772,14 @@ function showConfirm({ title, message, confirmLabel = 'Xác nhận', danger = fa
             accept.disabled = false;
         }
     };
+    if (passwordInput && submitOnEnter) {
+        passwordInput.addEventListener('keydown', event => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                accept.click();
+            }
+        });
+    }
     dialog.hidden = false;
     (passwordInput || accept).focus();
 }

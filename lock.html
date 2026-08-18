@@ -95,7 +95,7 @@
                 sessionStorage.removeItem(RETURN_KEY);
                 window.location.replace(returnPath.includes('lock.html') ? 'index.html' : returnPath);
             } catch {
-                errorMessage.textContent = 'Mật khẩu không đúng hoặc không kết nối được Cloudflare.';
+                errorMessage.textContent = 'Mật khẩu không đúng';
                 password.select();
             }
         }
