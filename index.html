@@ -17,7 +17,7 @@
     <meta property="og:description" content="Theo dõi lịch tập và tiến độ của bạn.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css?v=20260816-8">
-    <link rel="stylesheet" href="styles-overrides.css?v=20260817-12">
+    <link rel="stylesheet" href="styles-overrides.css?v=20260818-14">
 </head>
 <body>
     <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Mở menu" aria-controls="sidebar"><span></span><span></span><span></span></button>
@@ -25,7 +25,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="brand-row">
             <button class="brand brand-button" id="brandHome" type="button" aria-label="Tải lại Gym Tracker">
-                <img class="brand-logo" src="images/logo/logo.png" alt="Gym Tracker — Train Smarter">
+                <img class="brand-logo" src="images/logo/logolight-clean.png" alt="Gym Tracker — Train Smarter">
             </button>
             <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">×</button>
         </div>
@@ -54,6 +54,12 @@
                     <h1 class="page-title">Lịch tập luyện</h1>
                     <p class="page-subtitle"></p>
                 </div>
+                <div class="smoke-free-counter" aria-label="Số ngày bỏ thuốc lá">
+                    <span class="smoke-free-icon" aria-hidden="true">🚭</span>
+                    <span class="smoke-free-label">Số ngày bỏ thuốc</span>
+                    <strong class="smoke-free-days" id="smokeFreeDays">0</strong>
+                    <span class="smoke-free-unit">ngày</span>
+                </div>
                 <div class="header-utility">
                     <div class="live-clock" aria-label="Thời gian hiện tại"><span class="clock-icon">◷</span><div class="clock-display"><strong class="clock-time" id="liveTime">00:00</strong><span class="clock-date" id="liveDate">Đang tải...</span></div></div>
                     <div class="header-stats-inline"><div class="stat-badge"><span>Tuần này</span><strong id="weekProgress">0/7</strong></div><div class="stat-badge accent"><span>Streak</span><strong id="streak">0</strong></div></div>
@@ -81,7 +87,7 @@
                     <article class="stat-card success"><div class="stat-icon-large">✓</div><div class="stat-content-large"><div class="stat-number" id="statsTotalWorkouts">0</div><div class="stat-label-large">Buổi tập hoàn thành</div><div class="stat-change">Tính từ khi bắt đầu</div></div></article>
                     <article class="stat-card warning"><div class="stat-icon-large">◫</div><div class="stat-content-large"><div class="stat-number" id="statsThisWeek">0</div><div class="stat-label-large">Buổi tập tuần này</div><div class="stat-progress"><div class="progress-bar"><div class="progress-fill" id="statsWeekProgress"></div></div><span class="progress-text" id="statsWeekPercent">0%</span></div></div></article>
                     <article class="stat-card info"><div class="stat-icon-large">↗</div><div class="stat-content-large"><div class="stat-number" id="statsTotalExercises">0</div><div class="stat-label-large">Bài tập đã xong</div><div class="stat-change">Tích luỹ qua mọi buổi</div></div></article>
-                    <article class="stat-card missed"><div class="stat-icon-large">!</div><div class="stat-content-large"><div class="stat-number" id="statsMissedDays">0</div><div class="stat-label-large">Kẻ hèn</div><div class="stat-change">Ngày tập đã bỏ trong tuần</div></div></article>
+                    <article class="stat-card missed"><div class="stat-icon-large">!</div><div class="stat-content-large"><div class="stat-number" id="statsMissedDays">0</div><div class="stat-label-large">Kẻ hèn</div><div class="stat-change">Ngày bỏ tập</div></div></article>
                 </div>
                 <div class="stats-layout">
                     <section class="stats-section"><div class="section-heading"><div><span class="eyebrow">7 ngày gần nhất</span><h3>Nhịp tập trong tuần</h3></div></div><div class="weekly-chart"><div class="chart-bar"><div class="bar-fill" id="barDay0"></div><span class="bar-label">CN</span></div><div class="chart-bar"><div class="bar-fill" id="barDay1"></div><span class="bar-label">T2</span></div><div class="chart-bar"><div class="bar-fill" id="barDay2"></div><span class="bar-label">T3</span></div><div class="chart-bar"><div class="bar-fill" id="barDay3"></div><span class="bar-label">T4</span></div><div class="chart-bar"><div class="bar-fill" id="barDay4"></div><span class="bar-label">T5</span></div><div class="chart-bar"><div class="bar-fill" id="barDay5"></div><span class="bar-label">T6</span></div><div class="chart-bar"><div class="bar-fill" id="barDay6"></div><span class="bar-label">T7</span></div></div></section>
@@ -96,12 +102,12 @@
 
             <section id="settings-page" class="content-page"><div class="page-hero"><span class="eyebrow">Không gian của bạn</span><h2>Cài đặt</h2></div><section class="theme-settings"><div class="section-heading"><div><span class="eyebrow">Giao diện</span><h3>Theme Switcher</h3></div></div><div class="theme-switcher"><div><strong id="themeSwitcherLabel">Chế độ tối</strong><small id="themeSwitcherDescription">Dễ nhìn hơn khi tập luyện ban đêm</small></div><button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="true" aria-labelledby="themeSwitcherLabel themeSwitcherDescription"><span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span><span class="theme-toggle-thumb" aria-hidden="true">☾</span><span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span><span class="sr-only">Chuyển đổi giao diện sáng và tối</span></button></div></section><section class="lock-settings"><span class="settings-icon">▣</span><div class="lock-settings-copy"><span class="eyebrow">Bảo vệ thiết bị</span><h3>Khóa trang</h3><p id="lockSettingsDescription">Trang và thao tác xóa dữ liệu sẽ yêu cầu mật khẩu trên Cloudflare.</p><span class="status-pill" id="lockSettingsStatus">Cloudflare bảo vệ</span></div><button class="primary-btn lock-settings-button" id="lockSettingsButton" onclick="requestAppLock()">Khóa trang</button></section></section>
         </main>
-        <footer class="main-footer"><img class="footer-logo" src="images/logo/logo.png" alt="Gym Tracker"><p>Gym Tracker <span>·</span> Tập đều, tiến xa.</p><span class="footer-note">Dữ liệu của bạn, trên thiết bị của bạn.</span></footer>
+            <footer class="main-footer"><img class="footer-logo" src="images/logo/logolight-clean.png" alt="Gym Tracker"><p>Gym Tracker <span>·</span> Tập đều, tiến xa.</p><span class="footer-note">Dữ liệu của bạn, trên thiết bị của bạn.</span></footer>
     </div>
 
     <div id="exerciseModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-content"><div class="modal-header"><h2 id="modalTitle">Bài tập</h2><button class="close-btn" id="closeModal" aria-label="Đóng">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
     <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
     <div id="confirmDialog" class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" hidden><div class="confirm-card"><h2 id="confirmTitle">Xác nhận</h2><p id="confirmMessage"></p><div id="confirmFields" class="confirm-fields"></div><div class="confirm-actions"><button id="confirmCancel" class="secondary-btn">Hủy</button><button id="confirmAccept" class="danger-btn">Xác nhận</button></div></div></div>
-    <script src="app.js?v=20260817-12"></script>
+    <script src="app.js?v=20260818-16"></script>
 </body>
 </html>

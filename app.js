@@ -339,6 +339,7 @@ const workoutData = {
 
 // Chỉ tính dữ liệu từ ngày bắt đầu lộ trình tập luyện.
 const PROGRAM_START_DATE = '2025-12-31';
+const SMOKE_FREE_START_DATE = new Date(2026, 6, 14);
 const SUNDAY_TRAINING_MIGRATION_KEY = 'gymTrackerSundayTrainingV1';
 const APP_LOCKED_SESSION_KEY = 'gymTrackerLockedSession';
 const APP_LOCK_RETURN_KEY = 'gymTrackerLockReturn';
@@ -643,7 +644,7 @@ function calculateAllStats() {
     
     // Active days
     const activeDays = allDates.length;
-    const missedDays = calculateMissedDays(weekDates);
+    const missedDays = calculateMissedDays();
     
     // Average per week
     const weeks = activeDays > 0 ? Math.ceil(activeDays / 7) : 1;
@@ -664,15 +665,21 @@ function calculateAllStats() {
     };
 }
 
-function calculateMissedDays(weekDates) {
+function calculateMissedDays() {
+    const programStart = new Date(2025, 11, 31, 12);
     const today = new Date();
-    today.setHours(23, 59, 59, 999);
+    // Chỉ chốt một ngày là bỏ tập khi ngày đó đã kết thúc; ngày hiện tại và tương lai không bị tính.
+    const lastCompletedDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1, 12);
+    let missedDays = 0;
 
-    return weekDates.filter(date => {
+    for (const date = new Date(programStart); date <= lastCompletedDay; date.setDate(date.getDate() + 1)) {
         const workout = workoutData[date.getDay()];
-        const dateStr = formatDate(date);
-        return isProgramDate(date) && !workout.isRest && date <= today && !workoutProgress[dateStr]?.completed;
-    }).length;
+        if (!workout || workout.isRest) continue;
+
+        if (!workoutProgress[formatDate(date)]?.completed) missedDays++;
+    }
+
+    return missedDays;
 }
 
 function setupMobileMenu() {
@@ -1502,6 +1509,7 @@ function startLiveClock() {
         
         if (timeEl) timeEl.textContent = timeStr;
         if (dateEl) dateEl.textContent = dateStr;
+        updateSmokeFreeCounter(now);
 
         const todayKey = formatDate(now);
         if (todayKey !== renderedDate) {
@@ -1515,6 +1523,16 @@ function startLiveClock() {
     
     updateClock();
     setInterval(updateClock, 1000);
+}
+
+function updateSmokeFreeCounter(now = new Date()) {
+    const counterEl = document.getElementById('smokeFreeDays');
+    if (!counterEl) return;
+
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const elapsedDays = Math.floor((today - SMOKE_FREE_START_DATE) / 86400000);
+    // Tính cả ngày 14/07/2026 là ngày đầu tiên bỏ thuốc.
+    counterEl.textContent = Math.max(0, elapsedDays + 1).toLocaleString('vi-VN');
 }
 
 // ==================== STOPWATCH ====================
@@ -1863,6 +1881,10 @@ function applySavedTheme() {
 function applyTheme(choice) {
     const isDark = choice === 'dark' || (choice === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     document.body.dataset.theme = isDark ? 'dark' : 'light';
+    const logoSource = isDark ? 'images/logo/logolight-clean.png' : 'images/logo/logodark-clean.png';
+    document.querySelectorAll('.brand-logo, .footer-logo').forEach((logo) => {
+        logo.src = logoSource;
+    });
     const toggle = document.getElementById('themeToggle');
     const label = document.getElementById('themeSwitcherLabel');
     const description = document.getElementById('themeSwitcherDescription');
