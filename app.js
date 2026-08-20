@@ -832,6 +832,7 @@ function renderWorkouts() {
         const state = completed ? 'completed' : workout.isRest ? 'rest' : '';
         return `
             <button class="calendar-day ${activeDayIndex === index ? 'active' : ''} ${isToday ? 'today' : ''} ${state}" onclick="selectWorkoutDay(${index})" aria-pressed="${activeDayIndex === index}">
+                ${isToday ? '<div class="today-arrow"></div>' : ''}
                 <span class="calendar-day-name">${dayShort}</span>
                 <strong>${date.getDate()}</strong>
                 <span class="calendar-day-status">${workout.isRest && completed ? 'Nghỉ theo lịch' : workout.isRest ? workout.focus : completed ? 'Hoàn thành' : isToday ? 'Hôm nay' : workout.focus}</span>
@@ -1069,12 +1070,10 @@ function isAutoConfirmedRestDay(date) {
     if (!workout?.isRest || !isProgramDate(date)) return false;
 
     const comparedDate = new Date(date);
-    comparedDate.setHours(0, 0, 0, 0);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    // Ngày nghỉ chỉ được hệ thống xác nhận sau khi ngày đó đã kết thúc:
-    // lúc 00:00 của ngày hôm sau. Vì vậy Thứ 5 đang diễn ra chưa sáng/tích.
-    return comparedDate < today;
+    comparedDate.setHours(5, 30, 0, 0); // Ngày nghỉ tích vào lúc 5:30 sáng
+    const now = new Date();
+    // Ngày nghỉ được tự động xác nhận khi đã qua 5:30 sáng của ngày đó
+    return now >= comparedDate;
 }
 
 function isDayConfirmed(date) {

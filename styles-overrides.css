@@ -98,6 +98,7 @@ body[data-theme='light'] .smoke-free-counter {
     gap: 10px;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     margin-bottom: 18px;
+    padding-top: 24px;
 }
 
 .calendar-day {
@@ -109,6 +110,7 @@ body[data-theme='light'] .smoke-free-counter {
     gap: 5px;
     min-height: 118px;
     padding: 16px;
+    position: relative;
     text-align: left;
     transition: border-color var(--transition), transform var(--transition), background var(--transition);
 }
@@ -336,7 +338,7 @@ body[data-theme='light'] .smoke-free-counter {
         margin-right: -14px;
         overflow-x: auto;
         overscroll-behavior-x: contain;
-        padding: 2px 14px 12px;
+        padding: 26px 14px 12px;
         scroll-padding-left: 14px;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
@@ -425,4 +427,26 @@ body[data-theme='light'] .smoke-free-counter {
 .workout-card.rest .complete-checkbox:disabled {
     cursor:default;
     opacity:1;
+}
+
+/* Icon mũi tên chỉ ngày hôm nay */
+.today-arrow {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 13px solid #ffffff;
+    opacity: 0.95;
+    animation: bounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
 }
