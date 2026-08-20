@@ -94,11 +94,11 @@ wrangler pages deploy . --project-name=gym-tracker
 
 - **Thứ 2**: Ngực chính, vai giữa, tay sau
 - **Thứ 3**: Lưng, vai sau, tay trước
-- **Thứ 4**: Chân và bụng
-- **Thứ 5**: Hồi phục (cardio nhẹ)
+- **Thứ 4**: Chân, bắp chân, bụng
+- **Thứ 5**: Nghỉ hoặc tập tự do
 - **Thứ 6**: Vai chính, ngực phụ, tay sau
 - **Thứ 7**: Lưng, tay trước, cẳng tay, bụng
-- **Chủ nhật**: Nghỉ hoàn toàn
+- **Chủ nhật**: Chân, bắp chân, bụng
 
 ## 🛠️ Công nghệ
 

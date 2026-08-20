@@ -979,7 +979,6 @@ function openExerciseDetail(dateStr, exerciseIdx) {
     
     const notes = workoutProgress[dateStr]?.notes?.[exerciseIdx] || '';
     
-    // Image section
     const imageSource = exercise.image?.startsWith('http') ? exercise.image : `images/${exercise.image}`;
     const imageHTML = exercise.image ? `
         <div class="exercise-image">
@@ -1006,7 +1005,7 @@ function openExerciseDetail(dateStr, exerciseIdx) {
         <div class="notes-section">
             <h4>Ghi chú cá nhân</h4>
             <textarea id="exerciseNotes" placeholder="Cảm nhận, điều chỉnh...">${notes}</textarea>
-            <button class="save-log-btn" onclick="saveExerciseNotes('${dateStr}', ${exerciseIdx})" 
+            <button class="save-log-btn" onclick="saveExerciseNotes('${dateStr}', ${exerciseIdx}, this)" 
                     style="margin-top: 0.5rem;">
                 Lưu ghi chú
             </button>
@@ -1020,7 +1019,7 @@ function closeModal() {
     document.getElementById('exerciseModal').classList.remove('active');
 }
 
-function saveExerciseNotes(dateStr, exerciseIdx) {
+function saveExerciseNotes(dateStr, exerciseIdx, btn) {
     const notes = document.getElementById('exerciseNotes').value;
     
     if (!workoutProgress[dateStr]) {
@@ -1034,12 +1033,13 @@ function saveExerciseNotes(dateStr, exerciseIdx) {
     saveProgress(dateStr);
     
     // Show feedback
-    const btn = event.target;
-    const originalText = btn.textContent;
-    btn.textContent = '✓ Đã lưu';
-    setTimeout(() => {
-        btn.textContent = originalText;
-    }, 1500);
+    if (btn) {
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Đã lưu';
+        setTimeout(() => {
+            btn.textContent = originalText;
+        }, 1500);
+    }
 }
 
 function updateStats() {
@@ -1692,12 +1692,11 @@ function renderHistoryList(filter = 'all') {
     }).join('');
 }
 
-function filterHistory(filter) {
-    // Update active button
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
+function filterHistory(filter, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
     });
-    event.target.classList.add('active');
+    if (btn) btn.classList.add('active');
     
     renderHistoryList(filter);
 }

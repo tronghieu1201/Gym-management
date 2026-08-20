@@ -91,7 +91,6 @@ body[data-theme='light'] .smoke-free-counter {
 }
 .main-content { max-width: 1640px; padding: 34px 42px; }
 .workout-toolbar h2, .page-hero h2 { font-size: 27px; }
-.section-description { color: var(--muted); font-size: 14px; margin-top: 5px; }
 
 .week-calendar {
     display: grid;
