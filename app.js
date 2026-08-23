@@ -1,5 +1,6 @@
 // Workout data structure
-const workoutData = {
+// ─── LỊCH CŨ (áp dụng cho dates trước 2026-08-24) ───────────────────────────
+const workoutDataOld = {
     1: {
         name: 'Thứ 2',
         focus: 'Chest • Side Delts • Triceps',
@@ -337,14 +338,252 @@ const workoutData = {
     }
 };
 
+// ─── LỊCH MỚI (áp dụng từ 2026-08-24 trở đi) ───────────────────────────────
+const workoutData = {
+    1: {
+        name: 'Thứ 2',
+        focus: 'Shoulders • Chest • Triceps',
+        subtitle: 'Vai chính, ngực, tay sau',
+        exercises: [
+            {
+                name: 'Shoulder Press',
+                sets: '3 hiệp × 6–10 lần',
+                notes: 'Tác động: Vai trước và vai giữa; tay sau hỗ trợ. Nghỉ: 2–3 phút',
+                technique: 'Ngồi trên ghế có tựa hoặc đứng thẳng, cầm tạ ở ngang vai. Siết nhẹ bụng và mông, giữ lưng trung tính. Đẩy tạ lên trên đến khi cánh tay gần duỗi thẳng, sau đó hạ tạ chậm về ngang vai. Không ưỡn lưng hoặc dùng chân lấy đà.',
+                image: 'https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1637823947290-H5CTB9ZIB4T1ZID0X6G1/Seated%2BDumbbell%2BShoulder%2BPress.jpeg'
+            },
+            {
+                name: 'Lateral Raise',
+                sets: '4 hiệp × 12–20 lần',
+                notes: 'Tác động: Vai giữa, nhóm cơ chính tạo cảm giác vai rộng. Nghỉ: 60–90 giây',
+                technique: 'Đứng thẳng, cầm tạ hai bên người, khuỷu tay hơi cong. Nâng hai tay sang hai bên đến khoảng ngang vai, giữ ngắn ở phía trên rồi hạ xuống chậm. Không đung đưa người hoặc dùng quán tính để nâng tạ.',
+                image: ''
+            },
+            {
+                name: 'Rear Delt Fly',
+                sets: '3 hiệp × 12–20 lần',
+                notes: 'Tác động: Vai sau và phần lưng trên. Nghỉ: 60–90 giây',
+                technique: 'Gập người tại hông, giữ lưng trung tính và để tạ phía dưới thân. Mở hai tay sang hai bên bằng cách đưa khuỷu tay ra ngoài, siết vai sau ở cuối chuyển động rồi hạ tạ chậm. Không vung tạ hoặc biến động tác thành chèo tạ.',
+                image: ''
+            },
+            {
+                name: 'DB Bench Press',
+                sets: '3 hiệp × 6–10 lần',
+                notes: 'Tác động: Ngực, đặc biệt phần ngực giữa; vai trước và tay sau hỗ trợ. Nghỉ: 2–3 phút',
+                technique: 'Nằm trên ghế, hai chân đặt chắc xuống sàn, giữ bả vai ổn định. Hạ tạ xuống hai bên ngực với khuỷu tay hơi chếch ra ngoài, sau đó đẩy tạ lên có kiểm soát. Không nảy tạ và không để vai bị kéo mạnh về phía trước ở đáy.',
+                image: ''
+            },
+            {
+                name: 'Incline DB Press',
+                sets: '2 hiệp × 8–12 lần',
+                notes: 'Tác động: Ngực trên; vai trước và tay sau hỗ trợ. Nghỉ: 90–120 giây',
+                technique: 'Điều chỉnh ghế nghiêng khoảng 30–45°. Giữ bả vai ổn định, hạ tạ xuống vùng ngực trên rồi đẩy lên theo hướng tự nhiên. Không dựng ghế quá cao khiến bài biến thành Shoulder Press.',
+                image: ''
+            },
+            {
+                name: 'Overhead Triceps Extension',
+                sets: '3 hiệp × 10–15 lần',
+                notes: 'Tác động: Tay sau, đặc biệt đầu dài cơ tam đầu. Nghỉ: 60–90 giây',
+                technique: 'Giữ một quả tạ bằng hai tay phía trên đầu. Gập khuỷu tay để hạ tạ xuống phía sau đầu, giữ cánh tay trên tương đối cố định rồi duỗi khuỷu tay đưa tạ trở lại. Không xoè khuỷu tay quá rộng hoặc ưỡn lưng.',
+                image: ''
+            }
+        ]
+    },
+    2: {
+        name: 'Thứ 3',
+        focus: 'Back • Biceps • Abs',
+        subtitle: 'Lưng, tay trước, core',
+        exercises: [
+            {
+                name: 'Pull-up',
+                sets: '4 hiệp × 5–10 lần',
+                notes: 'Tác động: Xô, lưng trên, tay trước và cẳng tay. Nghỉ: 2–3 phút',
+                technique: 'Nắm xà chắc, treo người có kiểm soát. Kéo khuỷu tay xuống và về phía thân người để đưa cơ thể lên gần xà. Sau đó hạ xuống chậm về vị trí ban đầu. Không đung đưa hoặc dùng chân tạo đà.',
+                image: ''
+            },
+            {
+                name: 'One-arm DB Row',
+                sets: '3 hiệp × 8–12 lần mỗi bên',
+                notes: 'Tác động: Xô, lưng giữa và lưng trên; tay trước hỗ trợ. Nghỉ: 90–120 giây',
+                technique: 'Chống một tay lên ghế, chân đứng vững và giữ lưng trung tính. Kéo tạ về hướng hông bằng khuỷu tay, siết lưng ở cuối chuyển động rồi hạ tạ chậm. Không xoay thân người theo tạ.',
+                image: ''
+            },
+            {
+                name: 'Band Pulldown / Straight-arm Pulldown',
+                sets: '3 hiệp × 12–20 lần',
+                notes: 'Tác động: Cơ xô và các cơ kéo của thân trên. Nghỉ: 60–90 giây',
+                technique: 'Band Pulldown: Cố định dây ở vị trí cao, kéo khuỷu tay xuống về phía thân người và đưa dây xuống vùng ngực. Straight-arm Pulldown: Giữ khuỷu tay gần như cố định, kéo hai tay từ phía trước xuống về phía đùi bằng chuyển động của vai. Hai biến thể có thể thay thế cho nhau.',
+                image: ''
+            },
+            {
+                name: 'DB Curl',
+                sets: '3 hiệp × 8–12 lần',
+                notes: 'Tác động: Biceps, cơ tay trước. Nghỉ: 60–90 giây',
+                technique: 'Giữ khuỷu tay gần thân người. Cuốn tạ lên bằng cách gập khuỷu tay, siết biceps ở phía trên rồi hạ tạ chậm. Giữ thân người ổn định, không ngả người lấy đà.',
+                image: ''
+            },
+            {
+                name: 'Hammer Curl',
+                sets: '3 hiệp × 10–15 lần',
+                notes: 'Tác động: Brachialis, biceps và cẳng tay. Nghỉ: 60–90 giây',
+                technique: 'Cầm tạ với lòng bàn tay hướng vào nhau. Giữ cổ tay trung tính, cuốn tạ lên bằng khuỷu tay rồi hạ xuống chậm. Không xoay cổ tay hoặc đung đưa người.',
+                image: ''
+            },
+            {
+                name: 'Hanging Knee Raise / Plank',
+                sets: '3 hiệp',
+                notes: 'Tác động: Cơ bụng và khả năng kiểm soát thân người. Nghỉ: 60–90 giây',
+                technique: 'Hanging Knee Raise: Treo người chắc trên xà, giữ thân ổn định và kéo đầu gối lên phía thân người. Hạ xuống chậm, tránh đung đưa. Plank: Giữ cơ thể thành một đường thẳng từ đầu đến chân, siết bụng và mông, không võng lưng.',
+                image: ''
+            }
+        ]
+    },
+    3: {
+        name: 'Thứ 4',
+        focus: 'Nghỉ',
+        subtitle: 'Hôm nay bạn được phép nghỉ, đừng cảm thấy tội lỗi!',
+        isRest: true,
+        exercises: []
+    },
+    4: {
+        name: 'Thứ 5',
+        focus: 'Shoulders • Chest',
+        subtitle: 'Vai cao, ngực cao',
+        exercises: [
+            {
+                name: 'Lateral Raise',
+                sets: '4 hiệp × 12–20 lần',
+                notes: 'Tác động: Vai giữa. Nghỉ: 60–90 giây',
+                technique: 'Đứng thẳng, khuỷu tay hơi cong. Nâng tạ sang hai bên đến khoảng ngang vai, giữ ngắn ở trên rồi hạ xuống chậm. Không nhún người hoặc dùng đà.',
+                image: ''
+            },
+            {
+                name: 'Band Lateral Raise',
+                sets: '3 hiệp × 15–25 lần',
+                notes: 'Tác động: Vai giữa. Nghỉ: 45–75 giây',
+                technique: 'Đứng lên dây hoặc cố định dây phía dưới. Nâng cánh tay sang ngang với lực căng liên tục của dây, sau đó hạ xuống từ từ. Không để dây kéo tay rơi tự do.',
+                image: ''
+            },
+            {
+                name: 'Rear Delt Fly',
+                sets: '3 hiệp × 15–20 lần',
+                notes: 'Tác động: Vai sau và lưng trên. Nghỉ: 60–90 giây',
+                technique: 'Gập người tại hông, giữ lưng trung tính. Mở hai tay sang hai bên bằng cách đưa khuỷu tay ra ngoài, tập trung siết vai sau rồi hạ tạ chậm.',
+                image: ''
+            },
+            {
+                name: 'Face Pull',
+                sets: '2 hiệp × 15–20 lần',
+                notes: 'Tác động: Vai sau, lưng trên và các cơ quanh bả vai. Nghỉ: 45–75 giây',
+                technique: 'Cố định dây ở khoảng ngang mặt hoặc ngực trên. Kéo dây về phía mặt, đưa khuỷu tay ra ngoài và giữ vai ổn định. Trả dây về vị trí đầu có kiểm soát.',
+                image: ''
+            },
+            {
+                name: 'Incline DB Press',
+                sets: '3 hiệp × 8–12 lần',
+                notes: 'Tác động: Ngực trên; vai trước và tay sau hỗ trợ. Nghỉ: 90–120 giây',
+                technique: 'Đặt ghế ở góc khoảng 30–45°. Hạ tạ có kiểm soát xuống vùng ngực trên, sau đó đẩy lên. Giữ bả vai ổn định và chân chắc trên sàn.',
+                image: ''
+            },
+            {
+                name: 'Band Chest Press / Push-up',
+                sets: '2 hiệp × 12–20 lần',
+                notes: 'Tác động: Ngực; vai trước và tay sau hỗ trợ. Nghỉ: 60–90 giây',
+                technique: 'Band Chest Press: Cố định dây phía sau người ở ngang ngực, đẩy hai tay về phía trước rồi đưa về chậm. Push-up: Giữ thân người thẳng, siết bụng, hạ ngực xuống có kiểm soát rồi đẩy cơ thể lên. Hai bài là lựa chọn thay thế cho nhau.',
+                image: ''
+            }
+        ]
+    },
+    5: {
+        name: 'Thứ 6',
+        focus: 'Nghỉ',
+        subtitle: 'Hôm nay bạn được phép nghỉ, đừng cảm thấy tội lỗi!',
+        isRest: true,
+        exercises: []
+    },
+    6: {
+        name: 'Thứ 7',
+        focus: 'Upper • Biceps • Forearms • Abs',
+        subtitle: 'Upper body, tay, cẳng tay, core',
+        exercises: [
+            {
+                name: 'DB Bench Press',
+                sets: '3 hiệp × 8–12 lần',
+                notes: 'Tác động: Ngực; vai trước và tay sau hỗ trợ. Nghỉ: 90–120 giây',
+                technique: 'Nằm trên ghế, giữ bả vai ổn định và hai chân chắc trên sàn. Hạ tạ xuống hai bên ngực rồi đẩy lên có kiểm soát. Không nảy tạ hoặc mất kiểm soát ở đáy.',
+                image: ''
+            },
+            {
+                name: 'Pull-up / Chin-up',
+                sets: '3 hiệp × 6–10 lần',
+                notes: 'Tác động: Xô, lưng trên, biceps và cẳng tay. Nghỉ: 2–3 phút',
+                technique: 'Pull-up: Lòng bàn tay hướng ra ngoài. Chin-up: Lòng bàn tay hướng vào người. Kéo khuỷu tay xuống và về phía thân người, đưa cơ thể lên có kiểm soát rồi hạ xuống chậm. Có thể luân phiên hai biến thể.',
+                image: ''
+            },
+            {
+                name: 'One-arm DB Row',
+                sets: '2 hiệp × 10–12 lần mỗi bên',
+                notes: 'Tác động: Xô, lưng giữa và lưng trên. Nghỉ: 90–120 giây',
+                technique: 'Chống một tay lên ghế, giữ lưng trung tính. Kéo tạ về hướng hông, siết lưng rồi hạ xuống từ từ. Không xoay thân người để hỗ trợ.',
+                image: ''
+            },
+            {
+                name: 'Hammer Curl',
+                sets: '2 hiệp × 10–15 lần',
+                notes: 'Tác động: Brachialis, biceps và cẳng tay. Nghỉ: 60–90 giây',
+                technique: 'Giữ lòng bàn tay hướng vào nhau trong suốt chuyển động. Cuốn tạ lên bằng cách gập khuỷu tay, sau đó hạ xuống chậm. Giữ khuỷu tay gần thân người.',
+                image: ''
+            },
+            {
+                name: 'Band Triceps Pushdown',
+                sets: '3 hiệp × 12–20 lần',
+                notes: 'Tác động: Tay sau. Nghỉ: 60–90 giây',
+                technique: 'Cố định dây ở vị trí cao. Giữ khuỷu tay gần thân người, đẩy dây xuống bằng cách duỗi khuỷu tay. Siết tay sau ở cuối chuyển động rồi đưa dây trở lại có kiểm soát.',
+                image: ''
+            },
+            {
+                name: 'Farmer Hold',
+                sets: '3 hiệp × 30–60 giây',
+                notes: 'Tác động: Cẳng tay, grip, cơ cầu vai và khả năng ổn định toàn thân. Nghỉ: 60–90 giây',
+                technique: 'Cầm hai quả tạ nặng vừa phải ở hai bên thân. Đứng thẳng, siết bụng, giữ vai ổn định và duy trì tư thế trong thời gian quy định. Không nghiêng người hoặc nhún vai liên tục.',
+                image: ''
+            }
+        ]
+    },
+    0: {
+        name: 'Chủ nhật',
+        focus: 'Nghỉ',
+        subtitle: 'Hôm nay bạn được phép nghỉ, đừng cảm thấy tội lỗi!',
+        isRest: true,
+        exercises: []
+    }
+};
+
 // Chỉ tính dữ liệu từ ngày bắt đầu lộ trình tập luyện.
 const PROGRAM_START_DATE = '2025-12-31';
+const NEW_SCHEDULE_START_DATE = '2026-08-24'; // Lịch mới áp dụng từ tuần này
 const SMOKE_FREE_START_DATE = new Date(2026, 6, 14);
 const SUNDAY_TRAINING_MIGRATION_KEY = 'gymTrackerSundayTrainingV1';
 const APP_LOCKED_SESSION_KEY = 'gymTrackerLockedSession';
 const APP_LOCK_RETURN_KEY = 'gymTrackerLockReturn';
 const WORKER_API_URL = 'https://gymmanagement.trghy.workers.dev';
 const CLOUD_ACCESS_TOKEN_KEY = 'gymTrackerCloudAccessToken';
+
+// Helper: trả về đúng workout theo ngày
+// - Từ 23/8/2026 trở về trước: Lấy từ workoutDataOld (lịch cũ)
+// - Từ 24/8/2026 trở đi: Lấy từ workoutData (lịch mới)
+function getWorkoutForDate(date) {
+    const dateStr = (typeof date === 'string') ? date : formatDate(date);
+    const dayOfWeek = new Date(dateStr + 'T12:00:00').getDay();
+    
+    // So sánh string YYYY-MM-DD: '2026-08-23' < '2026-08-24' < '2026-08-25'
+    if (dateStr >= NEW_SCHEDULE_START_DATE) {
+        // Từ 24/8/2026 trở đi: Dùng lịch mới
+        return workoutData[dayOfWeek];
+    }
+    // Trước 24/8/2026: Dùng lịch cũ
+    return workoutDataOld[dayOfWeek];
+}
 
 // State management
 let currentWeekOffset = 0;
@@ -505,7 +744,7 @@ function renderMonthlyChart(monthCount) {
         for (let day = 1; day <= lastDay; day++) {
             // Giờ trưa giúp ngày hiển thị luôn đúng ở múi giờ Việt Nam.
             const date = new Date(year, month, day, 12);
-            const workout = workoutData[date.getDay()];
+            const workout = getWorkoutForDate(date);
             if (!workout || workout.isRest || !isProgramDate(date)) continue;
 
             scheduledDays++;
@@ -571,66 +810,104 @@ function calculateAllStats() {
         totalExercises += Object.values(exercises).filter(Boolean).length;
     });
     
-    // Muscle groups progress (based on completed exercises by muscle group)
+    // Muscle groups progress — dùng lịch đúng cho từng ngày trong tuần
+    // Lịch mới (từ 24/8): Vai/Lưng/Ngực/Tay/Cẳng tay/Bụng (không có Chân)
+    // Lịch cũ (trước 24/8): Vai/Lưng/Ngực/Tay/Cẳng tay/Bụng (map sang cấu trúc mới)
     const muscleGroupExercises = {
         Shoulders: 0, // Vai
         Back: 0,      // Lưng
         Chest: 0,     // Ngực
         Arms: 0,      // Tay
-        Legs: 0,      // Chân
+        Forearms: 0,  // Cẳng tay
         Abs: 0        // Bụng
     };
-    
+
+    // Tổng bài/nhóm cơ trong 1 tuần lịch mới (T2+T3+T5+T7)
     const muscleGroupTotal = {
-        Shoulders: 7,
-        Back: 6,
-        Chest: 4,
-        Arms: 9,
-        Legs: 10,
-        Abs: 5
+        Shoulders: 7, // T2(3)+T5(4)
+        Back: 5,      // T3(3)+T7(2)
+        Chest: 5,     // T2(2)+T5(2)+T7(1)
+        Arms: 5,      // T2(1)+T3(2)+T7(2)
+        Forearms: 1,  // T7(1 Farmer Hold)
+        Abs: 1        // T3(1 Knee Raise/Plank)
     };
-    
+
     // Count exercises by muscle group from this week
     weekDates.forEach(date => {
         const dateStr = formatDate(date);
+        const isNewSchedule = dateStr >= NEW_SCHEDULE_START_DATE;
+        const workout = getWorkoutForDate(date);
         const dayKey = date.getDay();
-        const workout = workoutData[dayKey];
-        
+
+        if (!workout || workout.isRest) return;
+
         const dayProgress = workoutProgress[dateStr] || {};
         // Một ngày đã được xác nhận hoàn thành phải tính đủ toàn bộ bài của ngày đó,
         // kể cả dữ liệu cũ chưa lưu từng checkbox riêng lẻ.
         const completedIndexes = dayProgress.completed
-            ? workout.exercises.map((_, index) => index)
+            ? (workout.exercises || []).map((_, index) => index)
             : Object.keys(dayProgress.exercises || {})
                 .filter(index => dayProgress.exercises[index])
                 .map(Number);
 
-        completedIndexes.forEach(index => {
-            if (dayKey === 1) { // T2: Chest, Shoulders, Triceps
-                if (index <= 2) muscleGroupExercises.Chest++;
-                else if (index === 3) muscleGroupExercises.Shoulders++;
-                else muscleGroupExercises.Arms++;
-            } else if (dayKey === 2) { // T3: Back, Biceps
-                if (index <= 2) muscleGroupExercises.Back++;
-                else if (index === 3) muscleGroupExercises.Shoulders++;
-                else muscleGroupExercises.Arms++;
-            } else if (dayKey === 3) { // T4: Legs, Abs
-                if (index <= 4) muscleGroupExercises.Legs++;
-                else muscleGroupExercises.Abs++;
-            } else if (dayKey === 5) { // T6: Shoulders, Chest, Triceps
-                if (index <= 4) muscleGroupExercises.Shoulders++;
-                else if (index === 5) muscleGroupExercises.Chest++;
-                else muscleGroupExercises.Arms++;
-            } else if (dayKey === 6) { // T7: Back, Arms, Abs
-                if (index <= 2) muscleGroupExercises.Back++;
-                else if (index <= 6) muscleGroupExercises.Arms++;
-                else muscleGroupExercises.Abs++;
-            } else if (dayKey === 0) { // CN: Legs, Calves, Abs
-                if (index <= 4) muscleGroupExercises.Legs++;
-                else muscleGroupExercises.Abs++;
-            }
-        });
+        if (isNewSchedule) {
+            // ─── Lịch mới (T2/T3/T5/T7 tập; T4/T6/CN nghỉ) ─────────────────
+            completedIndexes.forEach(index => {
+                if (dayKey === 1) {
+                    // T2: 0=Shoulder Press, 1=Lateral Raise, 2=Rear-delt Fly → Vai
+                    //     3=Bench Press, 4=Incline → Ngực
+                    //     5=Overhead Triceps Ext → Tay
+                    if (index <= 2) muscleGroupExercises.Shoulders++;
+                    else if (index <= 4) muscleGroupExercises.Chest++;
+                    else muscleGroupExercises.Arms++;
+                } else if (dayKey === 2) {
+                    // T3: 0=Pull-up, 1=DB Row, 2=Band Pulldown → Lưng
+                    //     3=DB Curl, 4=Hammer Curl → Tay
+                    //     5=Hanging Knee Raise/Plank → Bụng
+                    if (index <= 2) muscleGroupExercises.Back++;
+                    else if (index <= 4) muscleGroupExercises.Arms++;
+                    else muscleGroupExercises.Abs++;
+                } else if (dayKey === 4) {
+                    // T5: 0=Lateral Raise, 1=Band Lateral, 2=Rear-delt Fly, 3=Face Pull → Vai
+                    //     4=Incline Press, 5=Band Chest Press → Ngực
+                    if (index <= 3) muscleGroupExercises.Shoulders++;
+                    else muscleGroupExercises.Chest++;
+                } else if (dayKey === 6) {
+                    // T7: 0=Bench Press → Ngực
+                    //     1=Pull-up, 2=DB Row → Lưng
+                    //     3=Hammer Curl, 4=Band Triceps Pushdown → Tay
+                    //     5=Farmer Hold → Cẳng tay
+                    if (index === 0) muscleGroupExercises.Chest++;
+                    else if (index <= 2) muscleGroupExercises.Back++;
+                    else if (index <= 4) muscleGroupExercises.Arms++;
+                    else muscleGroupExercises.Forearms++;
+                }
+            });
+        } else {
+            // ─── Lịch cũ (trước 24/8) — map sang cấu trúc nhóm cơ mới ────────
+            completedIndexes.forEach(index => {
+                if (dayKey === 1) { // T2 cũ: Ngực/Vai/Tay
+                    if (index <= 2) muscleGroupExercises.Chest++;
+                    else if (index === 3) muscleGroupExercises.Shoulders++;
+                    else muscleGroupExercises.Arms++;
+                } else if (dayKey === 2) { // T3 cũ: Lưng/Vai sau/Tay
+                    if (index <= 2) muscleGroupExercises.Back++;
+                    else if (index === 3) muscleGroupExercises.Shoulders++;
+                    else muscleGroupExercises.Arms++;
+                } else if (dayKey === 5) { // T6 cũ: Vai/Ngực/Tay
+                    if (index <= 4) muscleGroupExercises.Shoulders++;
+                    else if (index === 5) muscleGroupExercises.Chest++;
+                    else muscleGroupExercises.Arms++;
+                } else if (dayKey === 6) { // T7 cũ: Lưng/Tay/Bụng
+                    if (index <= 2) muscleGroupExercises.Back++;
+                    else if (index <= 6) muscleGroupExercises.Arms++;
+                    else muscleGroupExercises.Abs++;
+                }
+                // T4 (Chân cũ), T3(key=3 cũ - chân), CN (Chân cũ) bỏ qua
+            });
+        }
     });
+
     
     // Calculate percentages
     const muscleGroups = {};
@@ -673,7 +950,7 @@ function calculateMissedDays() {
     let missedDays = 0;
 
     for (const date = new Date(programStart); date <= lastCompletedDay; date.setDate(date.getDate() + 1)) {
-        const workout = workoutData[date.getDay()];
+        const workout = getWorkoutForDate(date);
         if (!workout || workout.isRest) continue;
 
         if (!workoutProgress[formatDate(date)]?.completed) missedDays++;
@@ -824,7 +1101,7 @@ function renderWorkouts() {
     }
     
     calendar.innerHTML = dates.map((date, index) => {
-        const workout = workoutData[date.getDay()];
+        const workout = getWorkoutForDate(date);
         const dateStr = formatDate(date);
         const completed = isDayConfirmed(date);
         const isToday = formatDate(date) === formatDate(new Date());
@@ -841,7 +1118,7 @@ function renderWorkouts() {
     }).join('');
 
     const date = dates[activeDayIndex] || dates[0];
-    const workout = workoutData[date.getDay()];
+    const workout = getWorkoutForDate(date);
     const dateStr = formatDate(date);
     const isCompleted = isDayConfirmed(date);
     container.innerHTML = '';
@@ -943,9 +1220,8 @@ function toggleExerciseComplete(dateStr, exerciseIdx) {
 }
 
 function toggleAllExercises(dateStr, checkAll) {
-    const date = new Date(dateStr);
-    const dayKey = date.getDay();
-    const workout = workoutData[dayKey];
+    const date = new Date(`${dateStr}T12:00:00`);
+    const workout = getWorkoutForDate(dateStr);
     
     if (!workout || workout.isRest) return;
     
@@ -966,9 +1242,7 @@ function toggleAllExercises(dateStr, checkAll) {
 }
 
 function openExerciseDetail(dateStr, exerciseIdx) {
-    const date = new Date(dateStr);
-    const dayKey = date.getDay();
-    const workout = workoutData[dayKey];
+    const workout = getWorkoutForDate(dateStr);
     const exercise = workout.exercises[exerciseIdx];
     
     const modal = document.getElementById('exerciseModal');
@@ -1066,7 +1340,7 @@ function updateStats() {
 }
 
 function isAutoConfirmedRestDay(date) {
-    const workout = workoutData[date.getDay()];
+    const workout = getWorkoutForDate(date);
     if (!workout?.isRest || !isProgramDate(date)) return false;
 
     const comparedDate = new Date(date);
@@ -1164,7 +1438,7 @@ async function cloudRequest(path, options = {}) {
 
 function buildWorkoutDayRow(dateStr) {
     const date = new Date(`${dateStr}T12:00:00`);
-    const workout = workoutData[date.getDay()];
+    const workout = getWorkoutForDate(dateStr);
     const progress = workoutProgress[dateStr] || {};
     const completedCount = Object.values(progress.exercises || {}).filter(Boolean).length;
     const weekdayNames = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
@@ -1395,6 +1669,9 @@ function escapeXml(value) {
     return String(value ?? '').replace(/[<>&'\"]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' }[char]));
 }
 
+// New function: Export comprehensive migration report (old schedule vs new schedule)
+
+
 function exportWeeklyReport(weeks) {
     showConfirm({
         title: `Xuất thống kê ${weeks} tuần?`,
@@ -1414,7 +1691,8 @@ function downloadWeeklyReport(weeks) {
     for (let offset = 0; offset < weeks * 7; offset++) {
         const date = new Date(start);
         date.setDate(start.getDate() + offset);
-        const workout = workoutData[date.getDay()];
+        date.setHours(12, 0, 0, 0);
+        const workout = getWorkoutForDate(date);
         const progress = workoutProgress[formatDate(date)] || {};
         const exerciseCount = workout.exercises.length;
         const completedExercises = Object.values(progress.exercises || {}).filter(Boolean).length;
@@ -1912,3 +2190,4 @@ window.filterHistory = filterHistory;
 window.deleteHistoryItem = deleteHistoryItem;
 window.selectWorkoutDay = selectWorkoutDay;
 window.exportWeeklyReport = exportWeeklyReport;
+window.exportMigrationReport = exportMigrationReport;
