@@ -629,14 +629,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function activatePage(pageName, updateUrl = false) {
     const navItems = document.querySelectorAll('.nav-item');
+    const navTabs = document.querySelectorAll('.nav-tab');
     const pages = document.querySelectorAll('.content-page');
     const currentNav = document.querySelector(`.nav-item[data-page="${pageName}"]`);
+    const currentTab = document.querySelector(`.nav-tab[data-page="${pageName}"]`);
     const targetPage = document.getElementById(`${pageName}-page`);
     if (!currentNav || !targetPage) return;
 
     navItems.forEach(nav => nav.classList.remove('active'));
+    navTabs.forEach(tab => tab.classList.remove('active'));
     pages.forEach(page => page.classList.remove('active'));
     currentNav.classList.add('active');
+    if (currentTab) currentTab.classList.add('active');
     targetPage.classList.add('active');
 
     const pageTitle = document.querySelector('.page-title');
@@ -668,6 +672,26 @@ function setupNavigation() {
             activatePage(item.dataset.page, true);
         });
     });
+    
+    // ─── Bottom navigation (mobile) ─── 
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', event => {
+            event.preventDefault();
+            const page = tab.dataset.page;
+            activatePage(page, true);
+            
+            // Update active state
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Close sidebar if open (on tablet)
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+    
     window.addEventListener('hashchange', restorePageFromHash);
 }
 
@@ -2190,4 +2214,3 @@ window.filterHistory = filterHistory;
 window.deleteHistoryItem = deleteHistoryItem;
 window.selectWorkoutDay = selectWorkoutDay;
 window.exportWeeklyReport = exportWeeklyReport;
-window.exportMigrationReport = exportMigrationReport;

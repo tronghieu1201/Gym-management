@@ -18,6 +18,7 @@
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css?v=20260816-8">
     <link rel="stylesheet" href="styles-overrides.css?v=20260818-14">
+    <link rel="stylesheet" href="styles-mobile-redesign.css?v=20260823-1">
 </head>
 <body>
     <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Mở menu" aria-controls="sidebar"><span></span><span></span><span></span></button>
@@ -108,6 +109,27 @@
     <div id="exerciseModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-content"><div class="modal-header"><h2 id="modalTitle">Bài tập</h2><button class="close-btn" id="closeModal" aria-label="Đóng">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
     <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
     <div id="confirmDialog" class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" hidden><div class="confirm-card"><h2 id="confirmTitle">Xác nhận</h2><p id="confirmMessage"></p><div id="confirmFields" class="confirm-fields"></div><div class="confirm-actions"><button id="confirmCancel" class="secondary-btn">Hủy</button><button id="confirmAccept" class="danger-btn">Xác nhận</button></div></div></div>
+    
+    <!-- ─── BOTTOM NAVIGATION (Mobile only) ─── -->
+    <nav class="bottom-nav" id="bottomNav">
+        <a href="#workout" class="nav-tab active" data-page="workout" aria-label="Lịch tập">
+            <span class="nav-tab-icon">▦</span>
+            <span class="nav-tab-label">Lịch</span>
+        </a>
+        <a href="#stats" class="nav-tab" data-page="stats" aria-label="Tiến độ">
+            <span class="nav-tab-icon">◔</span>
+            <span class="nav-tab-label">Tiến độ</span>
+        </a>
+        <a href="#exercises" class="nav-tab" data-page="exercises" aria-label="Bấm giờ">
+            <span class="nav-tab-icon">◷</span>
+            <span class="nav-tab-label">Bấm giờ</span>
+        </a>
+        <a href="#settings" class="nav-tab" data-page="settings" aria-label="Cài đặt">
+            <span class="nav-tab-icon">⚙</span>
+            <span class="nav-tab-label">Cài đặt</span>
+        </a>
+    </nav>
+    
     <script src="app.js?v=20260824-1"></script>
 </body>
 </html>
