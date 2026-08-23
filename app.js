@@ -357,35 +357,35 @@ const workoutData = {
                 sets: '4 hiệp × 12–20 lần',
                 notes: 'Tác động: Vai giữa, nhóm cơ chính tạo cảm giác vai rộng. Nghỉ: 60–90 giây',
                 technique: 'Đứng thẳng, cầm tạ hai bên người, khuỷu tay hơi cong. Nâng hai tay sang hai bên đến khoảng ngang vai, giữ ngắn ở phía trên rồi hạ xuống chậm. Không đung đưa người hoặc dùng quán tính để nâng tạ.',
-                image: ''
+                image: 'https://qitano.com/wp-content/uploads/2021/11/%E3%82%B5%E3%82%A4%E3%83%89%E3%83%AC%E3%82%A4%E3%82%BA.jpg'
             },
             {
                 name: 'Rear Delt Fly',
                 sets: '3 hiệp × 12–20 lần',
                 notes: 'Tác động: Vai sau và phần lưng trên. Nghỉ: 60–90 giây',
                 technique: 'Gập người tại hông, giữ lưng trung tính và để tạ phía dưới thân. Mở hai tay sang hai bên bằng cách đưa khuỷu tay ra ngoài, siết vai sau ở cuối chuyển động rồi hạ tạ chậm. Không vung tạ hoặc biến động tác thành chèo tạ.',
-                image: ''
+                image: 'https://cdn.jackedgorilla.com/wp-content/uploads/2021/10/Best-Rear-Delt-Exercises-Seated-Rear-Delt-Dumbbell-Flyes.jpg'
             },
             {
                 name: 'DB Bench Press',
                 sets: '3 hiệp × 6–10 lần',
                 notes: 'Tác động: Ngực, đặc biệt phần ngực giữa; vai trước và tay sau hỗ trợ. Nghỉ: 2–3 phút',
                 technique: 'Nằm trên ghế, hai chân đặt chắc xuống sàn, giữ bả vai ổn định. Hạ tạ xuống hai bên ngực với khuỷu tay hơi chếch ra ngoài, sau đó đẩy tạ lên có kiểm soát. Không nảy tạ và không để vai bị kéo mạnh về phía trước ở đáy.',
-                image: ''
+                image: 'https://wellness52.com/wp-content/uploads/2022/09/Dumbbell-Bench-Press.jpg'
             },
             {
                 name: 'Incline DB Press',
                 sets: '2 hiệp × 8–12 lần',
                 notes: 'Tác động: Ngực trên; vai trước và tay sau hỗ trợ. Nghỉ: 90–120 giây',
                 technique: 'Điều chỉnh ghế nghiêng khoảng 30–45°. Giữ bả vai ổn định, hạ tạ xuống vùng ngực trên rồi đẩy lên theo hướng tự nhiên. Không dựng ghế quá cao khiến bài biến thành Shoulder Press.',
-                image: ''
+                image: 'https://cdn.zyloai.app/exercise/images/dumbbell-incline-bench-press-2.webp'
             },
             {
                 name: 'Overhead Triceps Extension',
                 sets: '3 hiệp × 10–15 lần',
                 notes: 'Tác động: Tay sau, đặc biệt đầu dài cơ tam đầu. Nghỉ: 60–90 giây',
                 technique: 'Giữ một quả tạ bằng hai tay phía trên đầu. Gập khuỷu tay để hạ tạ xuống phía sau đầu, giữ cánh tay trên tương đối cố định rồi duỗi khuỷu tay đưa tạ trở lại. Không xoè khuỷu tay quá rộng hoặc ưỡn lưng.',
-                image: ''
+                image: 'https://fitliferegime.com/wp-content/uploads/2021/07/One-Arm-Overhead-Dumbbell-Triceps-Extension.jpg'
             }
         ]
     },
