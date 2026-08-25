@@ -399,42 +399,42 @@ const workoutData = {
                 sets: '4 hiệp × 5–10 lần',
                 notes: 'Tác động: Xô, lưng trên, tay trước và cẳng tay. Nghỉ: 2–3 phút',
                 technique: 'Nắm xà chắc, treo người có kiểm soát. Kéo khuỷu tay xuống và về phía thân người để đưa cơ thể lên gần xà. Sau đó hạ xuống chậm về vị trí ban đầu. Không đung đưa hoặc dùng chân tạo đà.',
-                image: ''
+                image: 'https://cdn.shopify.com/s/files/1/0705/5432/1194/files/mikolo-pull-ups-blog-2.png?v=1693468017'
             },
             {
                 name: 'One-arm DB Row',
                 sets: '3 hiệp × 8–12 lần mỗi bên',
                 notes: 'Tác động: Xô, lưng giữa và lưng trên; tay trước hỗ trợ. Nghỉ: 90–120 giây',
                 technique: 'Chống một tay lên ghế, chân đứng vững và giữ lưng trung tính. Kéo tạ về hướng hông bằng khuỷu tay, siết lưng ở cuối chuyển động rồi hạ tạ chậm. Không xoay thân người theo tạ.',
-                image: ''
+                image: 'https://i.pinimg.com/736x/06/09/a4/0609a423793a6ec7539ce166cc661bb1.jpg'
             },
             {
-                name: 'Band Pulldown / Straight-arm Pulldown',
+                name: 'Straight-arm Pulldown',
                 sets: '3 hiệp × 12–20 lần',
                 notes: 'Tác động: Cơ xô và các cơ kéo của thân trên. Nghỉ: 60–90 giây',
-                technique: 'Band Pulldown: Cố định dây ở vị trí cao, kéo khuỷu tay xuống về phía thân người và đưa dây xuống vùng ngực. Straight-arm Pulldown: Giữ khuỷu tay gần như cố định, kéo hai tay từ phía trước xuống về phía đùi bằng chuyển động của vai. Hai biến thể có thể thay thế cho nhau.',
-                image: ''
+                technique: 'Giữ khuỷu tay gần như cố định, kéo hai tay từ phía trước xuống về phía đùi bằng chuyển động của vai.',
+                image: 'https://workoutguru.fit/wp-content/uploads/2023/10/cable-straight-arm-pulldown-version-2-video-exercise-guide-tips.jpg'
             },
             {
                 name: 'DB Curl',
                 sets: '3 hiệp × 8–12 lần',
                 notes: 'Tác động: Biceps, cơ tay trước. Nghỉ: 60–90 giây',
                 technique: 'Giữ khuỷu tay gần thân người. Cuốn tạ lên bằng cách gập khuỷu tay, siết biceps ở phía trên rồi hạ tạ chậm. Giữ thân người ổn định, không ngả người lấy đà.',
-                image: ''
+                image: 'https://fitgeneration.es/wp-content/uploads/2023/11/Dolor-de-munecas-4.png'
             },
             {
                 name: 'Hammer Curl',
                 sets: '3 hiệp × 10–15 lần',
                 notes: 'Tác động: Brachialis, biceps và cẳng tay. Nghỉ: 60–90 giây',
                 technique: 'Cầm tạ với lòng bàn tay hướng vào nhau. Giữ cổ tay trung tính, cuốn tạ lên bằng khuỷu tay rồi hạ xuống chậm. Không xoay cổ tay hoặc đung đưa người.',
-                image: ''
+                image: 'https://fitliferegime.com/wp-content/uploads/2023/06/Alternating-Hammer-Curl.gif'
             },
             {
-                name: 'Hanging Knee Raise / Plank',
+                name: 'Hanging Knee Raise',
                 sets: '3 hiệp',
                 notes: 'Tác động: Cơ bụng và khả năng kiểm soát thân người. Nghỉ: 60–90 giây',
-                technique: 'Hanging Knee Raise: Treo người chắc trên xà, giữ thân ổn định và kéo đầu gối lên phía thân người. Hạ xuống chậm, tránh đung đưa. Plank: Giữ cơ thể thành một đường thẳng từ đầu đến chân, siết bụng và mông, không võng lưng.',
-                image: ''
+                technique: 'Treo người chắc trên xà, giữ thân ổn định và kéo đầu gối lên phía thân người. Hạ xuống chậm, tránh đung đưa.',
+                image: 'https://cdn.shopify.com/s/files/1/1497/9682/files/2_0b302a30-222b-40f8-9284-f0cf623965c9.jpg?v=1648898308'
             }
         ]
     },
@@ -885,9 +885,9 @@ function calculateAllStats() {
                     else if (index <= 4) muscleGroupExercises.Chest++;
                     else muscleGroupExercises.Arms++;
                 } else if (dayKey === 2) {
-                    // T3: 0=Pull-up, 1=DB Row, 2=Band Pulldown → Lưng
+                    // T3: 0=Pull-up, 1=DB Row, 2=Straight-arm Pulldown → Lưng
                     //     3=DB Curl, 4=Hammer Curl → Tay
-                    //     5=Hanging Knee Raise/Plank → Bụng
+                    //     5=Hanging Knee Raise → Bụng
                     if (index <= 2) muscleGroupExercises.Back++;
                     else if (index <= 4) muscleGroupExercises.Arms++;
                     else muscleGroupExercises.Abs++;
