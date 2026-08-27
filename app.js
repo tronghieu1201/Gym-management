@@ -452,45 +452,45 @@ const workoutData = {
         exercises: [
             {
                 name: 'Lateral Raise',
-                sets: '4 hiệp × 12–20 lần',
+                sets: '3 set x 15 rep',
                 notes: 'Tác động: Vai giữa. Nghỉ: 60–90 giây',
                 technique: 'Đứng thẳng, khuỷu tay hơi cong. Nâng tạ sang hai bên đến khoảng ngang vai, giữ ngắn ở trên rồi hạ xuống chậm. Không nhún người hoặc dùng đà.',
-                image: ''
+                image: 'https://fitnessdergisi.com/wp-content/uploads/2021/02/en-iyi-omuz-hareketleri-3-561x359.jpg'
             },
             {
                 name: 'Band Lateral Raise',
-                sets: '3 hiệp × 15–25 lần',
+                sets: '3 set x 20 rep',
                 notes: 'Tác động: Vai giữa. Nghỉ: 45–75 giây',
                 technique: 'Đứng lên dây hoặc cố định dây phía dưới. Nâng cánh tay sang ngang với lực căng liên tục của dây, sau đó hạ xuống từ từ. Không để dây kéo tay rơi tự do.',
-                image: ''
+                image: 'https://tonyyy.com/wp-content/uploads/2019/12/41edb70606d1768c4c59bc0fc8719d70.png'
             },
             {
                 name: 'Rear Delt Fly',
-                sets: '3 hiệp × 15–20 lần',
+                sets: '2 set x 15 rep',
                 notes: 'Tác động: Vai sau và lưng trên. Nghỉ: 60–90 giây',
                 technique: 'Gập người tại hông, giữ lưng trung tính. Mở hai tay sang hai bên bằng cách đưa khuỷu tay ra ngoài, tập trung siết vai sau rồi hạ tạ chậm.',
-                image: ''
+                image: 'https://blog.kakaocdn.net/dn/bBh63d/btsAXe8TVPx/QdFQ7tvrSOY0McpIFtbBwk/img.jpg'
             },
             {
                 name: 'Face Pull',
-                sets: '2 hiệp × 15–20 lần',
+                sets: 'Set và rep',
                 notes: 'Tác động: Vai sau, lưng trên và các cơ quanh bả vai. Nghỉ: 45–75 giây',
                 technique: 'Cố định dây ở khoảng ngang mặt hoặc ngực trên. Kéo dây về phía mặt, đưa khuỷu tay ra ngoài và giữ vai ổn định. Trả dây về vị trí đầu có kiểm soát.',
-                image: ''
+                image: 'https://www.hevyapp.com/wp-content/uploads/face-pull-.png'
             },
             {
                 name: 'Incline DB Press',
-                sets: '3 hiệp × 8–12 lần',
+                sets: '3 set x 8 rep',
                 notes: 'Tác động: Ngực trên; vai trước và tay sau hỗ trợ. Nghỉ: 90–120 giây',
                 technique: 'Đặt ghế ở góc khoảng 30–45°. Hạ tạ có kiểm soát xuống vùng ngực trên, sau đó đẩy lên. Giữ bả vai ổn định và chân chắc trên sàn.',
-                image: ''
+                image: 'https://www.bodybuildingmealplan.com/wp-content/uploads/Dumbbell-Incline-Bench-Press-scaled.jpg'
             },
             {
-                name: 'Band Chest Press / Push-up',
-                sets: '2 hiệp × 12–20 lần',
+                name: 'Push-up',
+                sets: '3 set x 15 rep',
                 notes: 'Tác động: Ngực; vai trước và tay sau hỗ trợ. Nghỉ: 60–90 giây',
-                technique: 'Band Chest Press: Cố định dây phía sau người ở ngang ngực, đẩy hai tay về phía trước rồi đưa về chậm. Push-up: Giữ thân người thẳng, siết bụng, hạ ngực xuống có kiểm soát rồi đẩy cơ thể lên. Hai bài là lựa chọn thay thế cho nhau.',
-                image: ''
+                technique: 'Giữ thân người thẳng, siết bụng, hạ ngực xuống có kiểm soát rồi đẩy cơ thể lên.',
+                image: 'https://th.bing.com/th/id/R.80a860204c4a52ce37de4d44080dba13?rik=lcEb%2fGZ1M1Jq7A&riu=http%3a%2f%2fwww.fitliferegime.com%2fwp-content%2fuploads%2f2022%2f10%2fScapular-Push-Ups.jpg&ehk=UiiMdsfDaF6kXO7wFIRVr0P02zTIckGcKbh%2fESrebiw%3d&risl=&pid=ImgRaw&r=0'
             }
         ]
     },
@@ -893,7 +893,7 @@ function calculateAllStats() {
                     else muscleGroupExercises.Abs++;
                 } else if (dayKey === 4) {
                     // T5: 0=Lateral Raise, 1=Band Lateral, 2=Rear-delt Fly, 3=Face Pull → Vai
-                    //     4=Incline Press, 5=Band Chest Press → Ngực
+                    //     4=Incline Press, 5=Push-up → Ngực
                     if (index <= 3) muscleGroupExercises.Shoulders++;
                     else muscleGroupExercises.Chest++;
                 } else if (dayKey === 6) {
